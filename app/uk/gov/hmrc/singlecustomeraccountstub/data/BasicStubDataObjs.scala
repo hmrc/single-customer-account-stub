@@ -29,7 +29,7 @@ object BasicStubDataObjs {
     addressLine3 = Some("Home Region"),
     addressLine4 = Some("Home Area"),
     addressLine5 = Some("Home Shire"),
-    addressPostcode = Some("XX77 6YY"),
+    addressPostcode = Some("XX77 6YY")
   )
 
   val correspondence = IfAddress(
