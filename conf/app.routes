@@ -1,3 +1,4 @@
 # microservice specific routes
 
-GET        /hello-world             uk.gov.hmrc.singlecustomeraccountstub.controllers.MicroserviceHelloWorldController.hello
+GET        /individuals/details/NINO/:nino                      uk.gov.hmrc.singlecustomeraccountstub.controllers.DesignatoryDetailsController.getDesignatoryDetails(nino: String, fields: Option[String] = None)
+GET        /individuals/details/contact/nino/:nino              uk.gov.hmrc.singlecustomeraccountstub.controllers.ContactDetailsController.getContactDetails(nino: String, fields: Option[String] = None)

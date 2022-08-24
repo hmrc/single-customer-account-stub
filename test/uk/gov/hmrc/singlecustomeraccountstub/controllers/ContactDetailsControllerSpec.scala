@@ -1,0 +1,45 @@
+/*
+ * Copyright 2022 HM Revenue & Customs
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package uk.gov.hmrc.singlecustomeraccountstub.controllers
+
+import org.scalatest.matchers.should.Matchers
+import org.scalatest.wordspec.AnyWordSpec
+import play.api.http.Status
+import play.api.libs.json.Json
+import play.api.test.Helpers._
+import play.api.test.{FakeRequest, Helpers}
+import uk.gov.hmrc.singlecustomeraccountstub.data.BasicStubDataObjs
+
+class ContactDetailsControllerSpec extends AnyWordSpec with Matchers {
+
+  private val fakeRequest = FakeRequest("GET", "/")
+  private val controller = new ContactDetailsController(Helpers.stubControllerComponents())
+  private val validNino = "AA999999A"
+
+  "GET /individuals/details/contact/nino/:nino" should {
+    "return 200 if stub for NiNo is found" in {
+      val result = controller.getContactDetails(validNino)(fakeRequest)
+      status(result) shouldBe Status.OK
+      contentAsJson(result) shouldBe Json.toJson(BasicStubDataObjs.contactDetails)
+    }
+
+    "return 404 if stub for NiNo is not found" in {
+      val result = controller.getContactDetails("XX123456C")(fakeRequest)
+      status(result) shouldBe Status.NOT_FOUND
+    }
+  }
+}
