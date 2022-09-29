@@ -34,6 +34,7 @@ class ContactDetailsController @Inject()(cc: ControllerComponents)
       case "AA999999A" => Future.successful(Ok(Json.toJson(BasicStubDataObjs.contactDetails)))
       case "AA999999B" => Future.successful(Ok(Json.toJson(BasicStubDataObjs.contactDetails)))
       case "AA999999C" => Future.successful(Ok(Json.toJson(BasicStubDataObjs.contactDetails)))
+      case "AA999999D" => Future.successful(Ok(Json.toJson(BasicStubDataObjs.contactDetails)))
       case _ => Future.successful(ErrorResponses.notFound)
     }
   }
