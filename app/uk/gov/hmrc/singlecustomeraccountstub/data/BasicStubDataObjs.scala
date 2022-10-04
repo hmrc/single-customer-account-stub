@@ -73,8 +73,8 @@ object BasicStubDataObjs {
   val nameStephen = IfName(
     nameSequenceNumber = Some(2),
     titleType = Some(6),
-    firstForename = Some("S"),
-    secondForename = Some("M"),
+    firstForename = Some("S M"),
+    secondForename = Some("X"),
     surname = Some("BOTH"),
     requestedName = Some("Stephen")
 
