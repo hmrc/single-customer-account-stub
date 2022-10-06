@@ -10,6 +10,7 @@ There are currently 4 test users with the following NINO's:
 - AA999999B
 - AA999999C
 - AA999999D
+- AB216913B (SA user)
 
 ### License
 
