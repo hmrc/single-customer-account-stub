@@ -80,6 +80,16 @@ object BasicStubDataObjs {
 
   )
 
+  val nameEdward = IfName(
+    nameSequenceNumber = Some(2),
+    titleType = Some(6),
+    firstForename = Some("Edward"),
+    secondForename = Some("A"),
+    surname = Some("Robertson"),
+    requestedName = None
+
+  )
+
   val johnResidential = IfDesignatoryDetails(
                           details = IfDetails(marriageStatusType = Some(4)),
                           nameList = IfNameList(Seq(nameJohn)),
@@ -97,6 +107,11 @@ object BasicStubDataObjs {
   val stephenSADetail = IfDesignatoryDetails(
                         details = IfDetails(marriageStatusType = Some(1)),
                         nameList = IfNameList(Seq(nameStephen)),
+                        addressList = IfAddressList(Seq()))
+
+  val edwardResidentialDetail = IfDesignatoryDetails(
+                        details = IfDetails(marriageStatusType = Some(1)),
+                        nameList = IfNameList(Seq(nameEdward)),
                         addressList = IfAddressList(Seq()))
 
   val contactDetails = IfContactDetails(
