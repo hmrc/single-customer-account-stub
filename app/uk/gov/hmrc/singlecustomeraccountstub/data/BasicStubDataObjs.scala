@@ -122,4 +122,35 @@ object BasicStubDataObjs {
         IfContactDetail(code = 11, contactType = "PRIMARY E-MAIL", detail = "fred.blogs@hotmail.com")
       )))
 
+  val messageList =
+    """{
+      "items":
+      [
+      {
+        "id": "543e8c6001000001003e4a9e"
+        ,
+        "subject": "Your Tax Return"
+        ,
+        "validFrom": "2013-06-04"
+        ,
+        "readTime": "2014-05-02T17:17:45.618Z"
+        ,
+        "sentInError": true
+      }
+      ,
+      {
+        "id": "543e8c5f01000001003e4a9c"
+        ,
+        "subject": "Your Tax Return"
+        ,
+        "validFrom": "2013-06-04"
+        ,
+        "sentInError": true
+      }
+      ],
+      "count": {
+        "total": 2,
+        "unread": 1
+      }
+    }"""
 }
