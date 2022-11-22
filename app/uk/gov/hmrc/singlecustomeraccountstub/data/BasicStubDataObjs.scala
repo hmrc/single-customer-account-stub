@@ -16,6 +16,7 @@
 
 package uk.gov.hmrc.singlecustomeraccountstub.data
 
+import org.joda.time.LocalDate
 import uk.gov.hmrc.singlecustomeraccountstub.models._
 
 object BasicStubDataObjs {
@@ -123,34 +124,10 @@ object BasicStubDataObjs {
       )))
 
   val messageList =
-    """{
-      "items":
-      [
-      {
-        "id": "543e8c6001000001003e4a9e"
-        ,
-        "subject": "Your Tax Return"
-        ,
-        "validFrom": "2013-06-04"
-        ,
-        "readTime": "2014-05-02T17:17:45.618Z"
-        ,
-        "sentInError": true
-      }
-      ,
-      {
-        "id": "543e8c5f01000001003e4a9c"
-        ,
-        "subject": "Your Tax Return"
-        ,
-        "validFrom": "2013-06-04"
-        ,
-        "sentInError": true
-      }
-      ],
-      "count": {
-        "total": 2,
-        "unread": 1
-      }
-    }"""
+    """<h1>Reminder to file a Self Assessment return</h1>
+      |<p>This message was sent to you on 22 November 2022</p>
+      |
+      |
+      |<p>This is a test message</p>""".stripMargin
+
 }

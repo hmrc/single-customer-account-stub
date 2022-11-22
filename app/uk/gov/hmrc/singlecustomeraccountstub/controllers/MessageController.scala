@@ -15,36 +15,30 @@
  */
 
 package uk.gov.hmrc.singlecustomeraccountstub.controllers
-import org.joda.time.LocalDate
-import play.api.i18n.{I18nSupport, Messages}
-import play.api.libs.json.Json
+import play.api.i18n.I18nSupport
 import play.api.mvc.{Action, AnyContent, ControllerComponents}
-import play.twirl.api.{Html, HtmlFormat}
+import play.twirl.api.Html
 import uk.gov.hmrc.play.bootstrap.backend.controller.BackendController
 import uk.gov.hmrc.singlecustomeraccountstub.data.BasicStubDataObjs
 import uk.gov.hmrc.singlecustomeraccountstub.data.messages.MessageListItem
 import uk.gov.hmrc.singlecustomeraccountstub.data.messages.html.ListPartial
 
 import javax.inject.{Inject, Singleton}
-import scala.concurrent.{ExecutionContext, Future}
-import uk.gov.hmrc.play.partials.HtmlPartial
+import scala.concurrent.ExecutionContext
 
 @Singleton()
 class MessageController @Inject()(cc: ControllerComponents)(implicit ec: ExecutionContext)
   extends BackendController(cc) with I18nSupport {
 
+
   def getMessageList: Action[AnyContent] = Action { implicit request =>
-      Future.successful(Ok(Json.toJson(BasicStubDataObjs.messageList)))
 
-
-    val mm = Seq(MessageListItem("test","test",LocalDate.now()))
+    val subject = "Reminder to file a Self Assessment return"
+    val mm = Seq(MessageListItem("test",subject,"22 November 2022"))
     val html = ListPartial("http://localhost:8420/single-customer-account/messages" ,mm, Some("test"))
     Ok(html.toString())
     }
   def getMessage: Action[AnyContent] = Action { implicit request =>
-    Future.successful(Ok(Json.toJson(BasicStubDataObjs.messageList)))
-
-
-    Ok(Html("<p>test</p>"))
+    Ok(Html(BasicStubDataObjs.messageList))
   }
 }

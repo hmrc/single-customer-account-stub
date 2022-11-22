@@ -136,7 +136,7 @@
         <table id="sa-messages-table" class="table--borderless partial-highlight govuk-table">
             <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
-                    <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden govuk-body">@messages("sa.heading.status")</span></th>
+                    <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden govuk-body">@messages("sa.heading.message")</span></th>
                     <th scope="col" class="govuk-table__header">@messages("sa.heading.subject")</th>
                     <th scope="col" class="govuk-table__cell_last" width="150">@messages("sa.heading.date")</th>
                 </tr>
@@ -156,7 +156,7 @@
                         <!-- sender -->
                     <td class="govuk-table__cell">
                         @{
-                            val sender = "test"
+                            val sender = "HMRC"
                             val senderSpan = if(message.readTime.isEmpty) {
                                     <span class="govuk-!-font-weight-bold black-text govuk-body">{sender}</span>
                             } else {
@@ -177,7 +177,7 @@
                         }
                     } message-subject govuk-body'>
                         <span>@{
-                            val messageSubject = "test"
+                            val messageSubject = message.subject
                             val messageRead = if(message.readTime.isEmpty) {
                                     <span class="govuk-!-font-weight-bold black-text govuk-body">{messageSubject}</span>
                             } else {
@@ -212,6 +212,9 @@
                     <td valign="top" class='govuk-table__cell_last @{
                         if(message.readTime.isDefined) "" else "bold"
                     }'>
+                        @{
+                            message.validFrom
+                        }
                     <div>&nbsp;</div>
                     </td>
                 </tr>

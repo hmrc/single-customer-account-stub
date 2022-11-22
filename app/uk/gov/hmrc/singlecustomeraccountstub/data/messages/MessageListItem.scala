@@ -39,7 +39,7 @@ import uk.gov.hmrc.http.controllers.RestFormats
 case class MessageListItem(
   id: String,
   subject: String,
-  validFrom: LocalDate,
+  validFrom: String,
   taxpayerName: Option[TaxpayerName] = None,
   readTime: Option[DateTime] = None,
   sentInError: Boolean = false,
