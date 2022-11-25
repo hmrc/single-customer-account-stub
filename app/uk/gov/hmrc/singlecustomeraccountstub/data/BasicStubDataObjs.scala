@@ -16,6 +16,7 @@
 
 package uk.gov.hmrc.singlecustomeraccountstub.data
 
+import org.joda.time.LocalDate
 import uk.gov.hmrc.singlecustomeraccountstub.models._
 
 object BasicStubDataObjs {
@@ -121,5 +122,12 @@ object BasicStubDataObjs {
         IfContactDetail(code = 8, contactType = "EVENING TELEPHONE", detail = "07123 987654"),
         IfContactDetail(code = 11, contactType = "PRIMARY E-MAIL", detail = "fred.blogs@hotmail.com")
       )))
+
+  val messageList =
+    """<h1>Reminder to file a Self Assessment return</h1>
+      |<p>This message was sent to you on 22 November 2022</p>
+      |
+      |
+      |<p>This is a test message</p>""".stripMargin
 
 }
