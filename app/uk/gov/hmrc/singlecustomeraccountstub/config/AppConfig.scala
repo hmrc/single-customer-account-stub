@@ -23,4 +23,5 @@ import play.api.Configuration
 class AppConfig @Inject()(config: Configuration) {
 
   val appName: String = config.get[String]("appName")
+  val msgUrl : String = "http://localhost:8420/single-customer-account/messages"
 }
