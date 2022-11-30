@@ -16,7 +16,8 @@
 
 @import uk.gov.hmrc.urls.Link
 @import uk.gov.hmrc.singlecustomeraccountstub.data.messages.MessageListItem
-@(ptaBaseUrl: String, messageItems: Seq[MessageListItem], saUtr: Option[String])(implicit messages: Messages)
+@import uk.gov.hmrc.singlecustomeraccountstub.config.AppConfig
+@(ptaBaseUrl: String, messageItems: Seq[MessageListItem], saUtr: Option[String])(implicit messages: Messages, appConfig: AppConfig)
 
 <style>
         .heading-date {
@@ -163,7 +164,7 @@
                                     <span class="black-text govuk-body">{sender}</span>
                             }
                             Link.toInternalPage(
-                                url = s"http://localhost:8420/single-customer-account/messages/${message.id}",
+                                url = s"${appConfig.msgUrl}/single-customer-account/messages/${message.id}",
                                 Some(senderSpan.mkString),
                                 None,
                                 Some("no--underline")
@@ -200,7 +201,7 @@
                                 subjectWithCounter
                             }
                             Link.toInternalPage(
-                                url = s"http://localhost:8420/single-customer-account/messages/${message.id}",
+                                url = s"${appConfig.msgUrl}/single-customer-account/messages/${message.id}",
                                 Some(subjectWithCounter.mkString),
                                 None,
                                 Some("no--underline message-subject govuk-link")
