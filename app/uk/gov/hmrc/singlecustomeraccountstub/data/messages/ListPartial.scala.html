@@ -164,7 +164,7 @@
                                     <span class="black-text govuk-body">{sender}</span>
                             }
                             Link.toInternalPage(
-                                url = s"${appConfig.msgUrl}/single-customer-account/messages/${message.id}",
+                                url = s"${appConfig.msgUrl}/${message.id}",
                                 Some(senderSpan.mkString),
                                 None,
                                 Some("no--underline")
@@ -201,7 +201,7 @@
                                 subjectWithCounter
                             }
                             Link.toInternalPage(
-                                url = s"${appConfig.msgUrl}/single-customer-account/messages/${message.id}",
+                                url = s"${appConfig.msgUrl}/${message.id}",
                                 Some(subjectWithCounter.mkString),
                                 None,
                                 Some("no--underline message-subject govuk-link")
