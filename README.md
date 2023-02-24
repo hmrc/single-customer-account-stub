@@ -11,6 +11,7 @@ There are currently 5 test users with the following NINO's:
 - AA999999C
 - AA999999D
 - HT009413A
+- ER872414B
 
 ### License
 
