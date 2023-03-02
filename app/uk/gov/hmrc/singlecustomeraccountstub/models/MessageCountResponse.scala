@@ -14,15 +14,12 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.singlecustomeraccountstub.config
+package uk.gov.hmrc.singlecustomeraccountstub.models
 
-import javax.inject.{Inject, Singleton}
-import play.api.Configuration
+import play.api.libs.json.{Json, OFormat}
 
-@Singleton
-class AppConfig @Inject()(config: Configuration) {
+case class MessageCountResponse(count: MessageCount)
 
-  val appName: String = config.get[String]("appName")
-  private val msgHost: String = config.get[String]("microservice.services.message-host")
-  val msgUrl: String = s"$msgHost/single-customer-account/messages"
+object MessageCountResponse {
+  implicit val reads: OFormat[MessageCountResponse] = Json.format[MessageCountResponse]
 }

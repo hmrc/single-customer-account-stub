@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 HM Revenue & Customs
+ * Copyright 2023 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ import javax.inject.{Inject, Singleton}
 import scala.concurrent.{ExecutionContext, Future}
 import uk.gov.hmrc.play.partials.HtmlPartial
 import uk.gov.hmrc.singlecustomeraccountstub.config.AppConfig
+import uk.gov.hmrc.singlecustomeraccountstub.models.{MessageCount, MessageCountResponse}
 
 @Singleton()
 class MessageController @Inject()(cc: ControllerComponents)(implicit val appConfig: AppConfig , ec : ExecutionContext)
@@ -46,4 +47,14 @@ class MessageController @Inject()(cc: ControllerComponents)(implicit val appConf
   def getMessage: Action[AnyContent] = Action { implicit request =>
     Ok(Html(BasicStubDataObjs.messageList))
   }
+
+  //TODO save in mongo
+//  def postMessage: Action[AnyContent] = Action { implicit request =>
+//    Ok(Html(BasicStubDataObjs.messageList))
+//  }
+
+  def getMessageCount(countOnly: String): Action[AnyContent] = Action { implicit request =>
+    Ok(Json.toJson(MessageCountResponse(MessageCount(1,1))))
+  }
+
 }
