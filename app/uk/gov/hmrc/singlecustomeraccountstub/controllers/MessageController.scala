@@ -23,7 +23,6 @@ import uk.gov.hmrc.singlecustomeraccountstub.config.AppConfig
 import uk.gov.hmrc.singlecustomeraccountstub.models.{MessageCount, MessageCountResponse}
 
 import javax.inject.{Inject, Singleton}
-import scala.concurrent.ExecutionContext
 
 @Singleton()
 class MessageController @Inject()(cc: ControllerComponents)(implicit val appConfig: AppConfig)
