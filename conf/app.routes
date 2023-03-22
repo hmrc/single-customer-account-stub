@@ -5,5 +5,6 @@ GET        /individuals/details/contact/nino/:nino              uk.gov.hmrc.sing
 # GET        /messages                                            uk.gov.hmrc.singlecustomeraccountstub.controllers.MessageController.getMessageList
 # GET        /messages/test                                       uk.gov.hmrc.singlecustomeraccountstub.controllers.MessageController.getMessage
 
+
 # POST       /messages                                            uk.gov.hmrc.singlecustomeraccountstub.controllers.MessageController.postMessage
 GET        /messages                                 uk.gov.hmrc.singlecustomeraccountstub.controllers.MessageController.getMessageCount(countOnly: String)
