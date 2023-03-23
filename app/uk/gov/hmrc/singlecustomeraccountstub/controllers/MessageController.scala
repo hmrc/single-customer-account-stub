@@ -15,43 +15,18 @@
  */
 
 package uk.gov.hmrc.singlecustomeraccountstub.controllers
-import org.joda.time.LocalDate
-import org.joda.time.format.DateTimeFormat
-import play.api.i18n.{I18nSupport, Messages}
+import play.api.i18n.I18nSupport
 import play.api.libs.json.Json
 import play.api.mvc.{Action, AnyContent, ControllerComponents}
-import play.twirl.api.{Html, HtmlFormat}
 import uk.gov.hmrc.play.bootstrap.backend.controller.BackendController
-import uk.gov.hmrc.singlecustomeraccountstub.data.BasicStubDataObjs
-import uk.gov.hmrc.singlecustomeraccountstub.data.messages.MessageListItem
-import uk.gov.hmrc.singlecustomeraccountstub.data.messages.html.ListPartial
-
-import javax.inject.{Inject, Singleton}
-import scala.concurrent.{ExecutionContext, Future}
-import uk.gov.hmrc.play.partials.HtmlPartial
 import uk.gov.hmrc.singlecustomeraccountstub.config.AppConfig
 import uk.gov.hmrc.singlecustomeraccountstub.models.{MessageCount, MessageCountResponse}
 
+import javax.inject.{Inject, Singleton}
+
 @Singleton()
-class MessageController @Inject()(cc: ControllerComponents)(implicit val appConfig: AppConfig , ec : ExecutionContext)
+class MessageController @Inject()(cc: ControllerComponents)(implicit val appConfig: AppConfig)
   extends BackendController(cc) with I18nSupport {
-
-
-  def getMessageList: Action[AnyContent] = Action { implicit request =>
-
-    val subject = "Reminder to file a Self Assessment return"
-    val mm = Seq(MessageListItem("test",subject,"22 November 2022"))
-    val html = ListPartial(appConfig.msgUrl ,mm, Some("test"))
-    Ok(html.toString())
-    }
-  def getMessage: Action[AnyContent] = Action { implicit request =>
-    Ok(Html(BasicStubDataObjs.messageList))
-  }
-
-  //TODO save in mongo
-//  def postMessage: Action[AnyContent] = Action { implicit request =>
-//    Ok(Html(BasicStubDataObjs.messageList))
-//  }
 
   def getMessageCount(countOnly: String): Action[AnyContent] = Action { implicit request =>
     Ok(Json.toJson(MessageCountResponse(MessageCount(1,1))))

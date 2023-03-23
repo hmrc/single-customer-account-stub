@@ -16,7 +16,6 @@
 
 package uk.gov.hmrc.singlecustomeraccountstub.data
 
-import org.joda.time.LocalDate
 import uk.gov.hmrc.singlecustomeraccountstub.models._
 
 object BasicStubDataObjs {
