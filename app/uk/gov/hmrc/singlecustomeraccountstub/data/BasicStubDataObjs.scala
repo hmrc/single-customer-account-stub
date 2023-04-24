@@ -17,6 +17,9 @@
 package uk.gov.hmrc.singlecustomeraccountstub.data
 
 import uk.gov.hmrc.singlecustomeraccountstub.models._
+import uk.gov.hmrc.auth.core.Nino
+
+import java.time.LocalDate
 
 object BasicStubDataObjs {
 
@@ -97,7 +100,6 @@ object BasicStubDataObjs {
     secondForename = Some("W"),
     surname = Some("Feiling"),
     requestedName = None
-
   )
 
   val johnResidential = IfDesignatoryDetails(
@@ -129,6 +131,12 @@ object BasicStubDataObjs {
     details = IfDetails(marriageStatusType = Some(1)),
     nameList = IfNameList(Seq(nameAndrew)),
     addressList = IfAddressList(Seq()))
+
+  val capabilityDataDetail = IfCapabilityDetails(
+    nino= Nino(true, Some("GG012345C")),
+    date= "9 April 2023",
+    descriptionContent= "Your tax code has changed",
+    url= "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison")
 
   val contactDetails = IfContactDetails(
       contactDetails = Some(Seq(

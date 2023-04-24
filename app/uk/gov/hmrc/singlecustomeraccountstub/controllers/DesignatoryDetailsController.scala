@@ -37,6 +37,7 @@ class DesignatoryDetailsController @Inject()(cc: ControllerComponents)
       case "AA999999D" => Future.successful(Ok(Json.toJson(BasicStubDataObjs.stephenSADetail)))
       case "HT009413A" => Future.successful(Ok(Json.toJson(BasicStubDataObjs.edwardResidentialDetail)))
       case "ER872414B" => Future.successful(Ok(Json.toJson(BasicStubDataObjs.andrewResidentialDetail)))
+      case "GG012345C" => Future.successful(Ok(Json.toJson(BasicStubDataObjs.capabilityDataDetail)))
       case _ => Future.successful(ErrorResponses.notFound)
     }
   }
