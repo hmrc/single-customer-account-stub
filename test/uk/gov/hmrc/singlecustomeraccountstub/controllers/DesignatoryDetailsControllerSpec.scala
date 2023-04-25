@@ -41,5 +41,11 @@ class DesignatoryDetailsControllerSpec extends AnyWordSpec with Matchers {
       val result = controller.getDesignatoryDetails("XX123456C")(fakeRequest)
       status(result) shouldBe Status.NOT_FOUND
     }
+
+    "return 200 if capability detail stub if NiNo is found" in {
+      val result = controller.getDesignatoryDetails("GG012345C")(fakeRequest)
+      status(result) shouldBe Status.OK
+      contentAsJson(result) shouldBe Json.toJson(BasicStubDataObjs.capabilityDataDetail)
+    }
   }
 }

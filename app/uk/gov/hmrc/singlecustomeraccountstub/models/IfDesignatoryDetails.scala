@@ -17,6 +17,7 @@
 package uk.gov.hmrc.singlecustomeraccountstub.models
 
 import play.api.libs.json.{Format, Json}
+import uk.gov.hmrc.auth.core.Nino
 
 import java.time.LocalDate
 
@@ -27,6 +28,19 @@ case class IfDesignatoryDetails( details: IfDetails,
 object IfDesignatoryDetails {
 
   implicit val format: Format[IfDesignatoryDetails] = Json.format[IfDesignatoryDetails]
+
+}
+
+case class IfCapabilityDetails(
+  nino: Nino,
+  date: String,
+  descriptionContent: String,
+  url: String
+)
+
+object IfCapabilityDetails {
+
+  implicit val format: Format[IfCapabilityDetails] = Json.format[IfCapabilityDetails]
 
 }
 
