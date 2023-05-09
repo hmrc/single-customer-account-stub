@@ -19,6 +19,8 @@ package uk.gov.hmrc.singlecustomeraccountstub.data
 import uk.gov.hmrc.singlecustomeraccountstub.models._
 import uk.gov.hmrc.auth.core.Nino
 
+import java.time.LocalDate
+
 object BasicStubDataObjs {
 
   val residential = IfAddress(

@@ -23,4 +23,6 @@ import play.api.Configuration
 class AppConfig @Inject()(config: Configuration) {
 
   val appName: String = config.get[String]("appName")
+  private val msgHost: String = config.get[String]("microservice.services.message-host")
+  val msgUrl: String = s"$msgHost/single-customer-account/messages"
 }
