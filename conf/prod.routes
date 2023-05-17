@@ -1,5 +1,13 @@
 # Add all the application routes to the app.routes file
-->         /single-customer-account-stub  app.Routes
-->         /                              health.Routes
+->         /                                              health.Routes
 
-GET        /admin/metrics                 com.kenshoo.play.metrics.MetricsController.metrics
+GET        /admin/metrics                                 com.kenshoo.play.metrics.MetricsController.metrics
+
+GET        /individuals/details/NINO/:nino                uk.gov.hmrc.singlecustomeraccountstub.controllers.DesignatoryDetailsController.getDesignatoryDetails(nino: String, fields: Option[String] = None)
+GET        /individuals/details/contact/nino/:nino        uk.gov.hmrc.singlecustomeraccountstub.controllers.ContactDetailsController.getContactDetails(nino: String, fields: Option[String] = None)
+# GET      /messages                                      uk.gov.hmrc.singlecustomeraccountstub.controllers.MessageController.getMessageList
+# GET      /messages/test                                 uk.gov.hmrc.singlecustomeraccountstub.controllers.MessageController.getMessage
+
+
+# POST     /messages                                      uk.gov.hmrc.singlecustomeraccountstub.controllers.MessageController.postMessage
+GET        /messages                                      uk.gov.hmrc.singlecustomeraccountstub.controllers.MessageController.getMessageCount(countOnly: String)
