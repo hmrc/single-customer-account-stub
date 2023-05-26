@@ -31,16 +31,16 @@ object IfDesignatoryDetails {
 
 }
 
-case class IfCapabilityDetails(
+case class CapabilityDetails(
   nino: Nino,
-  date: String,
+  date: LocalDate,
   descriptionContent: String,
   url: String
 )
 
-object IfCapabilityDetails {
+object CapabilityDetails {
 
-  implicit val format: Format[IfCapabilityDetails] = Json.format[IfCapabilityDetails]
+  implicit val format: Format[CapabilityDetails] = Json.format[CapabilityDetails]
 
 }
 
