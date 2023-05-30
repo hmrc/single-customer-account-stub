@@ -16,8 +16,10 @@
 
 package uk.gov.hmrc.singlecustomeraccountstub.data
 
-import uk.gov.hmrc.singlecustomeraccountstub.models._
 import uk.gov.hmrc.auth.core.Nino
+import uk.gov.hmrc.singlecustomeraccountstub.models._
+
+import java.time.LocalDate
 
 object BasicStubDataObjs {
 
@@ -101,28 +103,28 @@ object BasicStubDataObjs {
   )
 
   val johnResidential = IfDesignatoryDetails(
-                          details = IfDetails(marriageStatusType = Some(4)),
-                          nameList = IfNameList(Seq(nameJohn)),
-                          addressList = IfAddressList(Seq(residential)))
+    details = IfDetails(marriageStatusType = Some(4)),
+    nameList = IfNameList(Seq(nameJohn)),
+    addressList = IfAddressList(Seq(residential)))
 
   val joanNoFixedAbode = IfDesignatoryDetails(
-                          details = IfDetails(marriageStatusType = Some(10)),
-                          nameList = IfNameList(Seq(nameJoan)),
-                          addressList = IfAddressList(Seq()))
+    details = IfDetails(marriageStatusType = Some(10)),
+    nameList = IfNameList(Seq(nameJoan)),
+    addressList = IfAddressList(Seq()))
 
   val gordonResidentialCorrespondence = IfDesignatoryDetails(
-                          details = IfDetails(marriageStatusType = Some(1)),
-                          nameList = IfNameList(Seq(nameGordon)),
-                          addressList = IfAddressList(Seq(residential, correspondence)))
+    details = IfDetails(marriageStatusType = Some(1)),
+    nameList = IfNameList(Seq(nameGordon)),
+    addressList = IfAddressList(Seq(residential, correspondence)))
   val stephenSADetail = IfDesignatoryDetails(
-                        details = IfDetails(marriageStatusType = Some(1)),
-                        nameList = IfNameList(Seq(nameStephen)),
-                        addressList = IfAddressList(Seq()))
+    details = IfDetails(marriageStatusType = Some(1)),
+    nameList = IfNameList(Seq(nameStephen)),
+    addressList = IfAddressList(Seq()))
 
   val edwardResidentialDetail = IfDesignatoryDetails(
-                        details = IfDetails(marriageStatusType = Some(1)),
-                        nameList = IfNameList(Seq(nameEdward)),
-                        addressList = IfAddressList(Seq()))
+    details = IfDetails(marriageStatusType = Some(1)),
+    nameList = IfNameList(Seq(nameEdward)),
+    addressList = IfAddressList(Seq()))
 
 
   val andrewResidentialDetail = IfDesignatoryDetails(
@@ -130,19 +132,51 @@ object BasicStubDataObjs {
     nameList = IfNameList(Seq(nameAndrew)),
     addressList = IfAddressList(Seq()))
 
-  val capabilityDataDetail = IfCapabilityDetails(
-    nino= Nino(true, Some("GG012345C")),
-    date= "9 April 2023",
-    descriptionContent= "Your tax code has changed",
-    url= "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison")
+  val capabilityDataDetail = Seq(
+    CapabilityDetails(
+      nino = Nino(true, Some("GG012345C")),
+      date = LocalDate.now.minusMonths(6).minusDays(1),
+      descriptionContent = "Your tax code has changed - 1",
+      url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison"),
+    CapabilityDetails(
+      nino = Nino(true, Some("GG012345C")),
+      date = LocalDate.now.minusMonths(6),
+      descriptionContent = "Your tax code has changed - 2",
+      url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison"),
+    CapabilityDetails(
+      nino = Nino(true, Some("GG012345C")),
+      date = LocalDate.now.minusMonths(6).plusDays(1),
+      descriptionContent = "Your tax code has changed - 3",
+      url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison"),
+    CapabilityDetails(
+      nino = Nino(true, Some("GG012345C")),
+      date = LocalDate.now.withMonth(4).withDayOfMonth(5),
+      descriptionContent = "Your tax code has changed - 4",
+      url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison"),
+    CapabilityDetails(
+      nino = Nino(true, Some("GG012345C")),
+      date = LocalDate.now.withMonth(4).withDayOfMonth(6),
+      descriptionContent = "Your tax code has changed - 5",
+      url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison"),
+    CapabilityDetails(
+      nino = Nino(true, Some("GG012345C")),
+      date = LocalDate.now.withMonth(4).withDayOfMonth(7),
+      descriptionContent = "Your tax code has changed - 6",
+      url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison"),
+    CapabilityDetails(
+      nino = Nino(true, Some("GG012345C")),
+      date = LocalDate.now,
+      descriptionContent = "Your tax code has changed - 7",
+      url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison")
+  )
 
   val contactDetails = IfContactDetails(
-      contactDetails = Some(Seq(
-        IfContactDetail(code = 9, contactType = "MOBILE TELEPHONE", detail = "07123 987654"),
-        IfContactDetail(code = 7, contactType = "DAYTIME TELEPHONE", detail = "07123 987654"),
-        IfContactDetail(code = 8, contactType = "EVENING TELEPHONE", detail = "07123 987654"),
-        IfContactDetail(code = 11, contactType = "PRIMARY E-MAIL", detail = "fred.blogs@hotmail.com")
-      )))
+    contactDetails = Some(Seq(
+      IfContactDetail(code = 9, contactType = "MOBILE TELEPHONE", detail = "07123 987654"),
+      IfContactDetail(code = 7, contactType = "DAYTIME TELEPHONE", detail = "07123 987654"),
+      IfContactDetail(code = 8, contactType = "EVENING TELEPHONE", detail = "07123 987654"),
+      IfContactDetail(code = 11, contactType = "PRIMARY E-MAIL", detail = "fred.blogs@hotmail.com")
+    )))
 
   val messageList =
     """<h1>Reminder to file a Self Assessment return</h1>
