@@ -26,17 +26,12 @@ import javax.inject.{Inject, Singleton}
 import scala.concurrent.Future
 
 @Singleton()
-class DesignatoryDetailsController @Inject()(cc: ControllerComponents)
+class ActivitiesController @Inject()(cc: ControllerComponents)
     extends BackendController(cc) {
 
-  def getDesignatoryDetails(nino: String, fields: Option[String] = None): Action[AnyContent] = Action.async { implicit request =>
+  def getActivities(nino: String, fields: Option[String] = None): Action[AnyContent] = Action.async { implicit request =>
     nino match {
-      case "AA999999A" => Future.successful(Ok(Json.toJson(BasicStubDataObjs.johnResidential)))
-      case "AA999999B" => Future.successful(Ok(Json.toJson(BasicStubDataObjs.joanNoFixedAbode)))
-      case "AA999999C" => Future.successful(Ok(Json.toJson(BasicStubDataObjs.gordonResidentialCorrespondence)))
-      case "AA999999D" => Future.successful(Ok(Json.toJson(BasicStubDataObjs.stephenSADetail)))
-      case "HT009413A" => Future.successful(Ok(Json.toJson(BasicStubDataObjs.edwardResidentialDetail)))
-      case "ER872414B" => Future.successful(Ok(Json.toJson(BasicStubDataObjs.andrewResidentialDetail)))
+      case "GG012345C" => Future.successful(Ok(Json.toJson(BasicStubDataObjs.capabilityDataDetail)))
       case _ => Future.successful(ErrorResponses.notFound)
     }
   }
