@@ -167,7 +167,12 @@ object BasicStubDataObjs {
       nino = Nino(true, Some("GG012345C")),
       date = LocalDate.now,
       descriptionContent = "Your tax code has changed - 7",
-      url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison")
+      url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison"),
+    CapabilityDetails(
+      nino = Nino(true, Some("BB012345C")),
+      date = LocalDate.now.withMonth(3).withDayOfMonth(8),
+      descriptionContent = "Your tax code for Monk's Cafe has changed",
+      url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison"),
   )
 
   val contactDetails = IfContactDetails(

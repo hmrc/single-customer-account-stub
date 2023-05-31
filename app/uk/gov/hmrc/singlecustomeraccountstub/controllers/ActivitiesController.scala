@@ -32,6 +32,7 @@ class ActivitiesController @Inject()(cc: ControllerComponents)
   def getActivities(nino: String, fields: Option[String] = None): Action[AnyContent] = Action.async { implicit request =>
     nino match {
       case "GG012345C" => Future.successful(Ok(Json.toJson(BasicStubDataObjs.capabilityDataDetail)))
+      case "BB012345C" => Future.successful(Ok(Json.toJson(BasicStubDataObjs.capabilityDataDetail)))
       case _ => Future.successful(ErrorResponses.notFound)
     }
   }
