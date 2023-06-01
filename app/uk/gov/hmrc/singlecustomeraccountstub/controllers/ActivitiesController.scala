@@ -19,7 +19,7 @@ package uk.gov.hmrc.singlecustomeraccountstub.controllers
 import play.api.libs.json.Json
 import play.api.mvc.{Action, AnyContent, ControllerComponents}
 import uk.gov.hmrc.play.bootstrap.backend.controller.BackendController
-import uk.gov.hmrc.singlecustomeraccountstub.data.BasicStubDataObjs
+import uk.gov.hmrc.singlecustomeraccountstub.data.ActivitiesStubData
 import uk.gov.hmrc.singlecustomeraccountstub.models.ErrorResponses
 
 import javax.inject.{Inject, Singleton}
@@ -29,10 +29,27 @@ import scala.concurrent.Future
 class ActivitiesController @Inject()(cc: ControllerComponents)
     extends BackendController(cc) {
 
-  def getActivities(nino: String, fields: Option[String] = None): Action[AnyContent] = Action.async { implicit request =>
+  def getTaxCalcData(nino: String, fields: Option[String] = None): Action[AnyContent] = Action.async { implicit request =>
     nino match {
-      case "GG012345C" => Future.successful(Ok(Json.toJson(BasicStubDataObjs.capabilityDataDetail)))
-      case "BB012345C" => Future.successful(Ok(Json.toJson(BasicStubDataObjs.capabilityDataDetail)))
+      case "GG012345C" => Future.successful(Ok(Json.toJson(ActivitiesStubData.taxCalc)))
+      case _ => Future.successful(ErrorResponses.notFound)
+    }
+  }
+  def getTaxCodeChangeData(nino: String, fields: Option[String] = None): Action[AnyContent] = Action.async { implicit request =>
+    nino match {
+      case "GG012345C" => Future.successful(Ok(Json.toJson(ActivitiesStubData.taxCodeChange)))
+      case _ => Future.successful(ErrorResponses.notFound)
+    }
+  }
+  def getChildBenefitData(nino: String, fields: Option[String] = None): Action[AnyContent] = Action.async { implicit request =>
+    nino match {
+      case "GG012345C" => Future.successful(Ok(Json.toJson(ActivitiesStubData.childBenefit)))
+      case _ => Future.successful(ErrorResponses.notFound)
+    }
+  }
+  def getPayeIncomeData(nino: String, fields: Option[String] = None): Action[AnyContent] = Action.async { implicit request =>
+    nino match {
+      case "GG012345C" => Future.successful(Ok(Json.toJson(ActivitiesStubData.payeIncome)))
       case _ => Future.successful(ErrorResponses.notFound)
     }
   }
