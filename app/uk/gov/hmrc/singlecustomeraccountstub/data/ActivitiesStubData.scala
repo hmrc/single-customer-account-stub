@@ -102,7 +102,7 @@ object ActivitiesStubData {
     CapabilityDetails(
       nino = Nino(true, Some("GG012345C")),
       date = LocalDate.now.minusMonths(2).minusDays(1),
-      descriptionContent = "Central Perk Coffee Ltd paid you PAYE income ",
+      descriptionContent = "Central Perk Coffee Ltd paid you PAYE income",
       url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison"),
   )
 
