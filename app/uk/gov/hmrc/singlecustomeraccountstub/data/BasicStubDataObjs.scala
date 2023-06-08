@@ -137,37 +137,44 @@ object BasicStubDataObjs {
       nino = Nino(true, Some("GG012345C")),
       date = LocalDate.now.minusMonths(6).minusDays(1),
       descriptionContent = "Your tax code has changed - 1",
-      url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison"),
+      url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison",
+      activityHeading = "Latest Tax code change"),
     CapabilityDetails(
       nino = Nino(true, Some("GG012345C")),
       date = LocalDate.now.minusMonths(6),
       descriptionContent = "Your tax code has changed - 2",
-      url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison"),
+      url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison",
+      activityHeading = "Latest Tax code change"),
     CapabilityDetails(
       nino = Nino(true, Some("GG012345C")),
       date = LocalDate.now.minusMonths(6).plusDays(1),
       descriptionContent = "Your tax code has changed - 3",
-      url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison"),
+      url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison",
+      activityHeading = "Latest Tax code change"),
     CapabilityDetails(
       nino = Nino(true, Some("GG012345C")),
       date = LocalDate.now.withMonth(4).withDayOfMonth(5),
       descriptionContent = "Your tax code has changed - 4",
-      url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison"),
+      url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison",
+      activityHeading = "Latest Tax code change"),
     CapabilityDetails(
       nino = Nino(true, Some("GG012345C")),
       date = LocalDate.now.withMonth(4).withDayOfMonth(6),
       descriptionContent = "Your tax code has changed - 5",
-      url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison"),
+      url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison",
+      activityHeading = "Latest Tax code change"),
     CapabilityDetails(
       nino = Nino(true, Some("GG012345C")),
       date = LocalDate.now.withMonth(4).withDayOfMonth(7),
       descriptionContent = "Your tax code has changed - 6",
-      url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison"),
+      url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison",
+      activityHeading = "Latest Tax code change"),
     CapabilityDetails(
       nino = Nino(true, Some("GG012345C")),
       date = LocalDate.now,
       descriptionContent = "Your tax code has changed - 7",
-      url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison"),
+      url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison",
+      activityHeading = "Latest Tax code change"),
   )
 
   val contactDetails = IfContactDetails(
