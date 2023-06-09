@@ -174,7 +174,7 @@ object BasicStubDataObjs {
       date = LocalDate.now,
       descriptionContent = "Your tax code has changed - 7",
       url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison",
-      activityHeading = "Latest Tax code change"),
+      activityHeading = "Latest Tax code change")
   )
 
   val contactDetails = IfContactDetails(
