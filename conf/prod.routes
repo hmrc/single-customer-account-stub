@@ -9,6 +9,8 @@ GET        /individuals/activities/tax-calc/NINO/:nino                    uk.gov
 GET        /individuals/activities/tax-code-change/NINO/:nino             uk.gov.hmrc.singlecustomeraccountstub.controllers.ActivitiesController.getTaxCodeChangeData(nino: String, fields: Option[String] = None)
 GET        /individuals/activities/child-benefit/NINO/:nino               uk.gov.hmrc.singlecustomeraccountstub.controllers.ActivitiesController.getChildBenefitData(nino: String, fields: Option[String] = None)
 GET        /individuals/activities/paye-income/NINO/:nino                 uk.gov.hmrc.singlecustomeraccountstub.controllers.ActivitiesController.getPayeIncomeData(nino: String, fields: Option[String] = None)
+GET        /individuals/actions/tax-calc/NINO/:nino                       uk.gov.hmrc.singlecustomeraccountstub.controllers.ActionsController.getActionData(nino: String, fields: Option[String] = None)
+
 # GET      /messages                                                      uk.gov.hmrc.singlecustomeraccountstub.controllers.MessageController.getMessageList
 # GET      /messages/test                                                 uk.gov.hmrc.singlecustomeraccountstub.controllers.MessageController.getMessage
 
