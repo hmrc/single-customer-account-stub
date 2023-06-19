@@ -30,7 +30,7 @@ object ActionStubData {
       descriptionContent = "You paid too much tax in the 2022 to 2023 tax year. HMRC owes you a £84.23 refund",
       actionDescription = "Claim your tax refund",
       url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison",
-      activityHeading = "Things for you to do"),
+      activityHeading = "Things for you to do")
   )
 
   val underPayment = Seq(
