@@ -17,7 +17,7 @@
 package uk.gov.hmrc.singlecustomeraccountstub.data
 
 import uk.gov.hmrc.auth.core.Nino
-import uk.gov.hmrc.singlecustomeraccountstub.models.CapabilityDetails
+import uk.gov.hmrc.singlecustomeraccountstub.models.{CapabilityDetails, TaxCodeChangeData, TaxCodeChangeDetails, TaxCodeChangeObject}
 
 import java.time.LocalDate
 
@@ -117,5 +117,19 @@ object ActivitiesStubData {
       descriptionContent = "Central Perk Coffee Ltd paid you PAYE income",
       url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison",
       activityHeading = "Your PAYE income for the current tax year")
+  )
+
+  val taxCodeChangeApi = Seq(
+    TaxCodeChangeObject(
+      data = TaxCodeChangeData(
+        current = TaxCodeChangeDetails(
+          taxCode = "830L", employerName = "Employer Name", operatedTaxCode = true, p2Issued = true, startDate = LocalDate.now.minusMonths(1).minusDays(1).toString, endDate = "2019-04-05", payrollNumber = "1", pensionIndicator = true, primary = true
+        ),
+        previous = TaxCodeChangeDetails(
+          taxCode = "1150L", employerName = "Employer Name", operatedTaxCode = true, p2Issued = true, startDate = LocalDate.now.minusMonths(1).minusDays(2).toString, endDate = "2018-06-26", payrollNumber = "1", pensionIndicator = true, primary = true
+        )
+      ),
+      links = Array.empty[String]
+    )
   )
 }
