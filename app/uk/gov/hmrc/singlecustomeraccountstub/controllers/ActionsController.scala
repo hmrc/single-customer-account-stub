@@ -19,25 +19,21 @@ package uk.gov.hmrc.singlecustomeraccountstub.controllers
 import play.api.libs.json.Json
 import play.api.mvc.{Action, AnyContent, ControllerComponents}
 import uk.gov.hmrc.play.bootstrap.backend.controller.BackendController
-import uk.gov.hmrc.singlecustomeraccountstub.data.BasicStubDataObjs
+import uk.gov.hmrc.singlecustomeraccountstub.data.ActionStubData
 import uk.gov.hmrc.singlecustomeraccountstub.models.ErrorResponses
 
-import javax.inject.{Inject, Singleton}
+import javax.inject.Inject
 import scala.concurrent.Future
 
-@Singleton()
-class DesignatoryDetailsController @Inject()(cc: ControllerComponents)
-    extends BackendController(cc) {
+class ActionsController @Inject()(cc: ControllerComponents)
+  extends BackendController(cc)  {
 
-  def getDesignatoryDetails(nino: String, fields: Option[String] = None): Action[AnyContent] = Action.async { implicit request =>
+  def getActionData(nino: String, fields: Option[String] = None): Action[AnyContent] = Action.async { implicit request =>
     nino match {
-      case "AA999999A" => Future.successful(Ok(Json.toJson(BasicStubDataObjs.johnResidential)))
-      case "AA999999B" => Future.successful(Ok(Json.toJson(BasicStubDataObjs.joanNoFixedAbode)))
-      case "AA999999C" => Future.successful(Ok(Json.toJson(BasicStubDataObjs.gordonResidentialCorrespondence)))
-      case "AA999999D" => Future.successful(Ok(Json.toJson(BasicStubDataObjs.stephenSADetail)))
-      case "HT009413A" => Future.successful(Ok(Json.toJson(BasicStubDataObjs.edwardResidentialDetail)))
-      case "ER872414B" => Future.successful(Ok(Json.toJson(BasicStubDataObjs.andrewResidentialDetail)))
+      case "GG012345C" => Future.successful(Ok(Json.toJson(ActionStubData.overPayment)))
+      case "AA999999A" => Future.successful(Ok(Json.toJson(ActionStubData.underPayment)))
       case _ => Future.successful(ErrorResponses.notFound)
     }
   }
+
 }
