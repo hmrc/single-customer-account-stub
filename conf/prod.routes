@@ -17,3 +17,7 @@ GET        /individuals/actions/tax-calc/NINO/:nino                       uk.gov
 
 # POST     /messages                                                      uk.gov.hmrc.singlecustomeraccountstub.controllers.MessageController.postMessage
 GET        /messages                                                      uk.gov.hmrc.singlecustomeraccountstub.controllers.MessageController.getMessageCount(countOnly: String)
+
+GET        /pay-as-you-earn/individuals/:nino/taxyear/:taxyear/payments   uk.gov.hmrc.singlecustomeraccountstub.controllers.ActivitiesController.getUnderpaymentStatus(nino: String, taxyear: String)
+GET        /pay-as-you-earn/individuals/:nino/repayments/status           uk.gov.hmrc.singlecustomeraccountstub.controllers.ActivitiesController.getRepaymentStatus(nino: String)
+GET        /individuals/:nino/reconciliation/:startTaxYear/:endTaxYear    uk.gov.hmrc.singlecustomeraccountstub.controllers.ActivitiesController.getTaxCalcReconciliation(nino: String, startTaxYear: String, endTaxYear: String)
