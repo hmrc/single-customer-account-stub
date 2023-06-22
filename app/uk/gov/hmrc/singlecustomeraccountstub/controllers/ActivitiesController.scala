@@ -53,4 +53,25 @@ class ActivitiesController @Inject()(cc: ControllerComponents)
       case _ => Future.successful(ErrorResponses.notFound)
     }
   }
+
+  def getUnderpaymentStatus(nino: String, taxYear: String): Action[AnyContent] = Action { implicit request =>
+    nino match {
+      case "GG012345C" => if(taxYear == "2021-22") Ok else BadRequest
+      case _ => ErrorResponses.notFound
+    }
+  }
+
+  def getRepaymentStatus(nino: String): Action[AnyContent] = Action { implicit request =>
+    nino match {
+      case "GG012345C" => Ok
+      case _ => ErrorResponses.notFound
+    }
+  }
+
+  def getTaxCalcReconciliation(nino: String, startTaxYear: String, endTaxYear: String): Action[AnyContent] = Action { implicit request =>
+    nino match {
+      case "GG012345C" => Ok(Json.toJson(ActivitiesStubData.taxCalcReconciliation))
+      case _ => ErrorResponses.notFound
+    }
+  }
 }
