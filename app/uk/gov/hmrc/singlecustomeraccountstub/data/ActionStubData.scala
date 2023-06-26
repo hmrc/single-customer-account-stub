@@ -27,7 +27,7 @@ object ActionStubData {
     ActionDetails(
       nino = Nino(true, Some("GG012345C")),
       date = LocalDate.now.minusMonths(2).minusDays(1),
-      descriptionContent = "You paid too much tax in the 2022 to 2023 tax year. HMRC owes you a £84.23 refund",
+      descriptionContent = "You paid too much tax in the 2022 to 2023 tax year. HMRC owes you a £84.23 refund.",
       actionDescription = "Claim your tax refund",
       url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison",
       activityHeading = "Things for you to do")
