@@ -16,10 +16,7 @@
 
 package uk.gov.hmrc.singlecustomeraccountstub.data
 
-import uk.gov.hmrc.auth.core.Nino
 import uk.gov.hmrc.singlecustomeraccountstub.models._
-
-import java.time.LocalDate
 
 object BasicStubDataObjs {
 
@@ -132,51 +129,6 @@ object BasicStubDataObjs {
     nameList = IfNameList(Seq(nameAndrew)),
     addressList = IfAddressList(Seq()))
 
-  val capabilityDataDetail = Seq(
-    CapabilityDetails(
-      nino = Nino(true, Some("GG012345C")),
-      date = LocalDate.now.minusMonths(6).minusDays(1),
-      descriptionContent = "Your tax code has changed - 1",
-      url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison",
-      activityHeading = "Latest Tax code change"),
-    CapabilityDetails(
-      nino = Nino(true, Some("GG012345C")),
-      date = LocalDate.now.minusMonths(6),
-      descriptionContent = "Your tax code has changed - 2",
-      url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison",
-      activityHeading = "Latest Tax code change"),
-    CapabilityDetails(
-      nino = Nino(true, Some("GG012345C")),
-      date = LocalDate.now.minusMonths(6).plusDays(1),
-      descriptionContent = "Your tax code has changed - 3",
-      url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison",
-      activityHeading = "Latest Tax code change"),
-    CapabilityDetails(
-      nino = Nino(true, Some("GG012345C")),
-      date = LocalDate.now.withMonth(4).withDayOfMonth(5),
-      descriptionContent = "Your tax code has changed - 4",
-      url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison",
-      activityHeading = "Latest Tax code change"),
-    CapabilityDetails(
-      nino = Nino(true, Some("GG012345C")),
-      date = LocalDate.now.withMonth(4).withDayOfMonth(6),
-      descriptionContent = "Your tax code has changed - 5",
-      url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison",
-      activityHeading = "Latest Tax code change"),
-    CapabilityDetails(
-      nino = Nino(true, Some("GG012345C")),
-      date = LocalDate.now.withMonth(4).withDayOfMonth(7),
-      descriptionContent = "Your tax code has changed - 6",
-      url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison",
-      activityHeading = "Latest Tax code change"),
-    CapabilityDetails(
-      nino = Nino(true, Some("GG012345C")),
-      date = LocalDate.now,
-      descriptionContent = "Your tax code has changed - 7",
-      url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison",
-      activityHeading = "Latest Tax code change")
-  )
-
   val contactDetails = IfContactDetails(
     contactDetails = Some(Seq(
       IfContactDetail(code = 9, contactType = "MOBILE TELEPHONE", detail = "07123 987654"),
@@ -184,12 +136,4 @@ object BasicStubDataObjs {
       IfContactDetail(code = 8, contactType = "EVENING TELEPHONE", detail = "07123 987654"),
       IfContactDetail(code = 11, contactType = "PRIMARY E-MAIL", detail = "fred.blogs@hotmail.com")
     )))
-
-  val messageList =
-    """<h1>Reminder to file a Self Assessment return</h1>
-      |<p>This message was sent to you on 22 November 2022</p>
-      |
-      |
-      |<p>This is a test message</p>""".stripMargin
-
 }

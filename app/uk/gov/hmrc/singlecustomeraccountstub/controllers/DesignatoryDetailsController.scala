@@ -27,7 +27,7 @@ import scala.concurrent.Future
 
 @Singleton()
 class DesignatoryDetailsController @Inject()(cc: ControllerComponents)
-    extends BackendController(cc) {
+  extends BackendController(cc) {
 
   def getDesignatoryDetails(nino: String, fields: Option[String] = None): Action[AnyContent] = Action.async { implicit request =>
     nino match {
