@@ -34,13 +34,13 @@ object IfContactDetail {
   implicit val format: Format[IfContactDetail] = Format(
     (
       (JsPath \ "code").read[Int] and
-      (JsPath \ "type").read[String] and
-      (JsPath \ "detail").read[String]
-    )(IfContactDetail.apply _),
+        (JsPath \ "type").read[String] and
+        (JsPath \ "detail").read[String]
+      )(IfContactDetail.apply _),
     (
       (JsPath \ "code").write[Int] and
-      (JsPath \ "type").write[String] and
-      (JsPath \ "detail").write[String]
-    )(unlift(IfContactDetail.unapply))
+        (JsPath \ "type").write[String] and
+        (JsPath \ "detail").write[String]
+      )(unlift(IfContactDetail.unapply))
   )
 }

@@ -27,7 +27,7 @@ import scala.concurrent.Future
 
 @Singleton()
 class ContactDetailsController @Inject()(cc: ControllerComponents)
-    extends BackendController(cc) {
+  extends BackendController(cc) {
 
   def getContactDetails(nino: String, fields: Option[String] = None): Action[AnyContent] = Action.async { _ =>
     nino match {

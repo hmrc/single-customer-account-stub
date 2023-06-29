@@ -26,7 +26,7 @@ import javax.inject.Inject
 import scala.concurrent.Future
 
 class ActionsController @Inject()(cc: ControllerComponents)
-  extends BackendController(cc)  {
+  extends BackendController(cc) {
 
   def getActionData(nino: String, fields: Option[String] = None): Action[AnyContent] = Action.async { implicit request =>
     nino match {
