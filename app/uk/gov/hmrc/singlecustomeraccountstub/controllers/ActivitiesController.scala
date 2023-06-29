@@ -37,10 +37,18 @@ class ActivitiesController @Inject()(cc: ControllerComponents)
   }
   def getTaxCodeChangeData(nino: String, fields: Option[String] = None): Action[AnyContent] = Action.async { implicit request =>
     nino match {
+      case "GG012345C" => Future.successful(Ok(Json.toJson(ActivitiesStubData.taxCodeChange)))
+      case _ => Future.successful(ErrorResponses.notFound)
+    }
+  }
+
+  def getTaxCodeChangeApiData(nino: String, fields: Option[String] = None): Action[AnyContent] = Action.async { implicit request =>
+    nino match {
       case "GG012345C" => Future.successful(Ok(Json.toJson(ActivitiesStubData.taxCodeChangeApi)))
       case _ => Future.successful(ErrorResponses.notFound)
     }
   }
+
   def getChildBenefitData(nino: String, fields: Option[String] = None): Action[AnyContent] = Action.async { implicit request =>
     nino match {
       case "GG012345C" => Future.successful(Ok(Json.toJson(ActivitiesStubData.childBenefit)))

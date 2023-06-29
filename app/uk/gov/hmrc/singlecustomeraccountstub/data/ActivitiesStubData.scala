@@ -36,43 +36,7 @@ object ActivitiesStubData {
     CapabilityDetails(
       nino = Nino(true, Some("GG012345C")),
       date = LocalDate.now.minusMonths(1).minusDays(1),
-      descriptionContent = "Your tax code has changed - 1",
-      url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison",
-      activityHeading = "Latest Tax code change"),
-    CapabilityDetails(
-      nino = Nino(true, Some("GG012345C")),
-      date = LocalDate.now.minusMonths(2),
-      descriptionContent = "Your tax code has changed - 2",
-      url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison",
-      activityHeading = "Latest Tax code change"),
-    CapabilityDetails(
-      nino = Nino(true, Some("GG012345C")),
-      date = LocalDate.now.minusMonths(3).plusDays(1),
-      descriptionContent = "Your tax code has changed - 3",
-      url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison",
-      activityHeading = "Latest Tax code change"),
-    CapabilityDetails(
-      nino = Nino(true, Some("GG012345C")),
-      date = LocalDate.now.withMonth(4).withDayOfMonth(5),
-      descriptionContent = "Your tax code has changed - 4",
-      url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison",
-      activityHeading = "Latest Tax code change"),
-    CapabilityDetails(
-      nino = Nino(true, Some("GG012345C")),
-      date = LocalDate.now.withMonth(4).withDayOfMonth(6),
-      descriptionContent = "Your tax code has changed - 5",
-      url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison",
-      activityHeading = "Latest Tax code change"),
-    CapabilityDetails(
-      nino = Nino(true, Some("GG012345C")),
-      date = LocalDate.now.withMonth(4).withDayOfMonth(7),
-      descriptionContent = "Your tax code has changed - 6",
-      url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison",
-      activityHeading = "Latest Tax code change"),
-    CapabilityDetails(
-      nino = Nino(true, Some("GG012345C")),
-      date = LocalDate.now,
-      descriptionContent = "Your tax code has changed - 7",
+      descriptionContent = "Your tax code for Monk's Cafe has changed",
       url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison",
       activityHeading = "Latest Tax code change")
   )
@@ -123,10 +87,10 @@ object ActivitiesStubData {
     TaxCodeChangeObject(
       data = TaxCodeChangeData(
         current = TaxCodeChangeDetails(
-          taxCode = "830L", employerName = "Employer Name", operatedTaxCode = true, p2Issued = true, startDate = LocalDate.now.minusMonths(1).minusDays(1).toString, endDate = "2019-04-05", payrollNumber = "1", pensionIndicator = true, primary = true
+          taxCode = "830L", employerName = "Monk's Cafe", operatedTaxCode = true, p2Issued = true, startDate = LocalDate.of(2023,3,8).toString, endDate = LocalDate.of(2023,4,8).toString, payrollNumber = "1", pensionIndicator = true, primary = true
         ),
         previous = TaxCodeChangeDetails(
-          taxCode = "1150L", employerName = "Employer Name", operatedTaxCode = true, p2Issued = true, startDate = LocalDate.now.minusMonths(1).minusDays(2).toString, endDate = "2018-06-26", payrollNumber = "1", pensionIndicator = true, primary = true
+          taxCode = "1150L", employerName = "Employer Name", operatedTaxCode = true, p2Issued = true, startDate = LocalDate.of(2023,3,8).toString, endDate = LocalDate.of(2023,4,8).toString, payrollNumber = "1", pensionIndicator = true, primary = true
         )
       ),
       links = Array.empty[String]
