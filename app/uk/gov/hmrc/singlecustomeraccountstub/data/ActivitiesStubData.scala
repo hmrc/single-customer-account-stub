@@ -83,6 +83,7 @@ object ActivitiesStubData {
       activityHeading = "Your PAYE income for the current tax year")
   )
 
+
   val taxCodeChangeApi = Seq(
     TaxCodeChangeObject(
       data = TaxCodeChangeData(
@@ -96,4 +97,112 @@ object ActivitiesStubData {
       links = Array.empty[String]
     )
   )
+
+  val taxCalcReconciliation =
+    """
+      |{
+      |    "nino": "AB234567",
+      |    "taxYears":
+      |[
+      |{
+      |    "taxYear": 2016,
+      |    "reconciliations":
+      |[
+      |{
+      |    "reconciliationId": 13,
+      |    "reconciliationStatus": 8,
+      |    "cumulativeAmount": 90.55,
+      |    "taxLiabilityAmount": 1300.75,
+      |    "taxPaidAmount": 1210.2,
+      |    "reconciliationTimeStamp": "2017-07-30 12:34:56",
+      |    "p800Status": 3,
+      |    "collectionMethod": 31,
+      |    "previousReconciliationId": 12,
+      |    "multiYearRecIndicator": false,
+      |    "p800Reasons":
+      |
+      |[
+      |{
+      |    "reasonType": 9,
+      |    "reasonCode": 45,
+      |    "estimatedAmount": -123.45,
+      |    "actualAmount": -140.75
+      |},
+      |        {
+      |            "reasonType": 9,
+      |            "reasonCode": 49,
+      |            "estimatedAmount": 454.2,
+      |            "actualAmount": 300.2
+      |        }
+      |    ]
+      |},
+      |{
+      |    "reconciliationId": 12,
+      |    "reconciliationStatus": 5,
+      |    "cumulativeAmount": 80.55,
+      |    "taxLiabilityAmount": 3300.75,
+      |    "taxPaidAmount": 3220,
+      |    "reconciliationTimeStamp": "2017-07-07 00:00:00",
+      |    "p800Status": 4,
+      |    "collectionMethod": 31,
+      |    "nextReconciliationId": 13,
+      |    "multiYearRecIndicator": true,
+      |    "p800Reasons":
+      |            []
+      |        }
+      |    ]
+      |
+      |},
+      |{
+      |    "taxYear": 2015
+      |},
+      |{
+      |    "taxYear": 2014,
+      |    "reconciliations":
+      |[
+      |{
+      |    "reconciliationId": 11,
+      |    "cumulativeAmount": 0,
+      |    "taxLiabilityAmount": 1300.55,
+      |    "taxPaidAmount": 1300.55,
+      |    "p800Reasons":
+      |[
+      |                {
+      |                    "estimatedAmount": 0,
+      |                    "actualAmount": 0
+      |                }
+      |            ]
+      |        }
+      |    ]
+      |},
+      |{
+      |    "taxYear": 2013,
+      |    "reconciliations":
+      |[
+      |{
+      |    "reconciliationId": 10,
+      |    "reconciliationStatus": 1,
+      |    "cumulativeAmount": 0,
+      |    "taxLiabilityAmount": 1300.55,
+      |    "taxPaidAmount": 1300.55,
+      |    "reconciliationTimeStamp": "2014-08-05 23:49:00",
+      |    "previousReconciliationId": 9,
+      |    "multiYearRecIndicator": false
+      |},
+      |                {
+      |                    "reconciliationId": 9,
+      |                    "reconciliationStatus": 2,
+      |                    "cumulativeAmount": 5.45,
+      |                    "taxLiabilityAmount": 1300.55,
+      |                    "taxPaidAmount": 1305.55,
+      |                    "reconciliationTimeStamp": "2014-10-11 01:02:03",
+      |                    "nextReconciliationId": 10,
+      |                    "multiYearRecIndicator": false
+      |                }
+      |            ]
+      |        }
+      |    ]
+      |
+      |}
+      |""".stripMargin
 }

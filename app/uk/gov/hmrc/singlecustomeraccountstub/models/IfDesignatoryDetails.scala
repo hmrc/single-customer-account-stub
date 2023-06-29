@@ -21,9 +21,9 @@ import uk.gov.hmrc.auth.core.Nino
 
 import java.time.LocalDate
 
-case class IfDesignatoryDetails( details: IfDetails,
-                                 nameList: IfNameList,
-                                 addressList: IfAddressList )
+case class IfDesignatoryDetails(details: IfDetails,
+                                nameList: IfNameList,
+                                addressList: IfAddressList)
 
 object IfDesignatoryDetails {
 
@@ -32,12 +32,12 @@ object IfDesignatoryDetails {
 }
 
 case class CapabilityDetails(
-  nino: Nino,
-  date: LocalDate,
-  descriptionContent: String,
-  url: String,
-  activityHeading: String
-)
+                              nino: Nino,
+                              date: LocalDate,
+                              descriptionContent: String,
+                              url: String,
+                              activityHeading: String
+                            )
 
 object CapabilityDetails {
 
@@ -46,13 +46,13 @@ object CapabilityDetails {
 }
 
 case class ActionDetails(
-                              nino: Nino,
-                              date: LocalDate,
-                              descriptionContent: String,
-                              actionDescription: String,
-                              url: String,
-                              activityHeading: String
-                            )
+                          nino: Nino,
+                          date: LocalDate,
+                          descriptionContent: String,
+                          actionDescription: String,
+                          url: String,
+                          activityHeading: String
+                        )
 
 object ActionDetails {
 
@@ -140,17 +140,17 @@ object IfAddressList {
 
 }
 
-case class IfAddress( addressSequenceNumber: Option[Int] = None,
-                      countryCode: Option[Int] = None,
-                      addressType: Option[Int] = None,
-                      addressStartDate: Option[LocalDate] = None,
-                      addressEndDate: Option[LocalDate] = None,
-                      addressLine1: Option[String] = None,
-                      addressLine2: Option[String] = None,
-                      addressLine3: Option[String] = None,
-                      addressLine4: Option[String] = None,
-                      addressLine5: Option[String] = None,
-                      addressPostcode: Option[String] = None)
+case class IfAddress(addressSequenceNumber: Option[Int] = None,
+                     countryCode: Option[Int] = None,
+                     addressType: Option[Int] = None,
+                     addressStartDate: Option[LocalDate] = None,
+                     addressEndDate: Option[LocalDate] = None,
+                     addressLine1: Option[String] = None,
+                     addressLine2: Option[String] = None,
+                     addressLine3: Option[String] = None,
+                     addressLine4: Option[String] = None,
+                     addressLine5: Option[String] = None,
+                     addressPostcode: Option[String] = None)
 
 object IfAddress {
 

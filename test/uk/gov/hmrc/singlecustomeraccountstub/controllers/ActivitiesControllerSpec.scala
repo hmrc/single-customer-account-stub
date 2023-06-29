@@ -81,4 +81,44 @@ class ActivitiesControllerSpec extends AnyWordSpec with Matchers {
     }
   }
 
+  "GET /pay-as-you-earn/individuals/:nino/taxyear/:taxyear/payments" should {
+    "return 200 if underpayment status is found" in {
+      val result = controller.getUnderpaymentStatus(validNino, "2021-22")(fakeRequest)
+      status(result) shouldBe Status.OK
+    }
+
+    "return 400 if underpayment status is not found" in {
+      val result = controller.getUnderpaymentStatus(validNino, "2022-23")(fakeRequest)
+      status(result) shouldBe Status.BAD_REQUEST
+    }
+    "return 404 if NINO is not found" in {
+      val result = controller.getUnderpaymentStatus("AA11111111", "2021-22")(fakeRequest)
+      status(result) shouldBe Status.NOT_FOUND
+    }
+  }
+
+  "GET /pay-as-you-earn/individuals/:nino/repayments/status" should {
+    "return 200 if repayment status is found" in {
+      val result = controller.getRepaymentStatus(validNino)(fakeRequest)
+      status(result) shouldBe Status.OK
+    }
+
+    "return 404 if NINO is not found" in {
+      val result = controller.getRepaymentStatus("AA11111111")(fakeRequest)
+      status(result) shouldBe Status.NOT_FOUND
+    }
+  }
+  "GET /individuals/:nino/reconciliation/:startTaxYear/:endTaxYear" should {
+    "return 200 if tax calc reconciliation is found" in {
+      val result = controller.getTaxCalcReconciliation(validNino, "2021", "2022")(fakeRequest)
+      status(result) shouldBe Status.OK
+      contentAsJson(result) shouldBe Json.toJson(ActivitiesStubData.taxCalcReconciliation)
+    }
+
+    "return 404 if NINO is not found" in {
+      val result = controller.getTaxCalcReconciliation("AA11111111", "2021", "2022")(fakeRequest)
+      status(result) shouldBe Status.NOT_FOUND
+    }
+  }
+
 }
