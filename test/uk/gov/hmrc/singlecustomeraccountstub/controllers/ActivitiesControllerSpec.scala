@@ -44,7 +44,7 @@ class ActivitiesControllerSpec extends AnyWordSpec with Matchers {
 
   "GET /individuals/activities/tax-code-change/NINO/:nino" should {
     "return 200 if stub for tax code change is found" in {
-      val result = controller.getTaxCodeChangeData(validNino)(fakeRequest)
+      val result = controller.getTaxCodeChangeApiData(validNino)(fakeRequest)
       status(result) shouldBe Status.OK
       contentAsJson(result) shouldBe Json.toJson(ActivitiesStubData.taxCodeChangeApi)
     }
