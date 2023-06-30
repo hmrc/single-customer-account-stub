@@ -44,13 +44,26 @@ class ActivitiesControllerSpec extends AnyWordSpec with Matchers {
 
   "GET /individuals/activities/tax-code-change/NINO/:nino" should {
     "return 200 if stub for tax code change is found" in {
+      val result = controller.getTaxCodeChangeData(validNino)(fakeRequest)
+      status(result) shouldBe Status.OK
+      contentAsJson(result) shouldBe Json.toJson(ActivitiesStubData.taxCodeChange)
+    }
+
+    "return 404 if stub for tax code change is not found" in {
+      val result = controller.getTaxCodeChangeData("XX123456C")(fakeRequest)
+      status(result) shouldBe Status.NOT_FOUND
+    }
+  }
+
+  "GET /individuals/activities/tax-code-change-api/NINO/:nino" should {
+    "return 200 if stub for tax code change is found" in {
       val result = controller.getTaxCodeChangeApiData(validNino)(fakeRequest)
       status(result) shouldBe Status.OK
       contentAsJson(result) shouldBe Json.toJson(ActivitiesStubData.taxCodeChangeApi)
     }
 
     "return 404 if stub for tax code change is not found" in {
-      val result = controller.getTaxCodeChangeData("XX123456C")(fakeRequest)
+      val result = controller.getTaxCodeChangeApiData("XX123456C")(fakeRequest)
       status(result) shouldBe Status.NOT_FOUND
     }
   }
