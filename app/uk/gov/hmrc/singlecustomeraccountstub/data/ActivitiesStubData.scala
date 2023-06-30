@@ -23,7 +23,7 @@ import java.time.LocalDate
 
 object ActivitiesStubData {
 
-  val taxCalc = Seq(
+  val taxCalc: Seq[CapabilityDetails] = Seq(
     CapabilityDetails(
       nino = Nino(true, Some("GG012345C")),
       date = LocalDate.now.minusMonths(2).minusDays(1),
@@ -32,16 +32,7 @@ object ActivitiesStubData {
       activityHeading = "Your tax calculation")
   )
 
-//  val taxCodeChange = Seq(
-//    CapabilityDetails(
-//      nino = Nino(true, Some("GG012345C")),
-//      date = LocalDate.now.minusMonths(1).minusDays(1),
-//      descriptionContent = "Your tax code for Monk's Cafe has changed",
-//      url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison",
-//      activityHeading = "Latest Tax code change")
-//  )
-
-  val childBenefit = Seq(
+  val childBenefit: Seq[CapabilityDetails] = Seq(
     CapabilityDetails(
       nino = Nino(true, Some("GG012345C")),
       date = LocalDate.now.minusMonths(1).minusDays(1),
@@ -74,7 +65,7 @@ object ActivitiesStubData {
       activityHeading = "Recent Child Benefit payments")
   )
 
-  val payeIncome = Seq(
+  val payeIncome: Seq[CapabilityDetails] = Seq(
     CapabilityDetails(
       nino = Nino(true, Some("GG012345C")),
       date = LocalDate.now.minusMonths(2).minusDays(1),
@@ -84,21 +75,21 @@ object ActivitiesStubData {
   )
 
 
-  val taxCodeChange =
+  val taxCodeChange: TaxCodeChangeObject =
     TaxCodeChangeObject(
       data = TaxCodeChangeData(
         current = TaxCodeChangeDetails(
-          taxCode = "830L", employerName = "Monk's Cafe", operatedTaxCode = true, p2Issued = true, startDate = LocalDate.of(2023,3,8).toString, endDate = LocalDate.of(2023,4,8).toString, payrollNumber = "1", pensionIndicator = true, primary = true
+          taxCode = "830L", employerName = "Monk's Cafe", operatedTaxCode = true, p2Issued = true, startDate = LocalDate.of(2023, 3, 8).toString, endDate = LocalDate.of(2023, 4, 8).toString, payrollNumber = "1", pensionIndicator = true, primary = true
         ),
         previous = TaxCodeChangeDetails(
-          taxCode = "1150L", employerName = "Employer Name", operatedTaxCode = true, p2Issued = true, startDate = LocalDate.of(2023,3,8).toString, endDate = LocalDate.of(2023,4,8).toString, payrollNumber = "1", pensionIndicator = true, primary = true
+          taxCode = "1150L", employerName = "Employer Name", operatedTaxCode = true, p2Issued = true, startDate = LocalDate.of(2023, 3, 8).toString, endDate = LocalDate.of(2023, 4, 8).toString, payrollNumber = "1", pensionIndicator = true, primary = true
         )
       ),
       links = Array.empty[String]
     )
 
 
-  val taxCalcReconciliation =
+  val taxCalcReconciliation: String =
     """
       |{
       |    "nino": "AB234567",
