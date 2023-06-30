@@ -7,7 +7,6 @@ GET        /individuals/details/NINO/:nino                                uk.gov
 GET        /individuals/details/contact/nino/:nino                        uk.gov.hmrc.singlecustomeraccountstub.controllers.ContactDetailsController.getContactDetails(nino: String, fields: Option[String] = None)
 GET        /individuals/activities/tax-calc/NINO/:nino                    uk.gov.hmrc.singlecustomeraccountstub.controllers.ActivitiesController.getTaxCalcData(nino: String, fields: Option[String] = None)
 GET        /individuals/activities/tax-code-change/NINO/:nino             uk.gov.hmrc.singlecustomeraccountstub.controllers.ActivitiesController.getTaxCodeChangeData(nino: String, fields: Option[String] = None)
-GET        /individuals/activities/tax-code-change-api/NINO/:nino         uk.gov.hmrc.singlecustomeraccountstub.controllers.ActivitiesController.getTaxCodeChangeApiData(nino: String, fields: Option[String] = None)
 GET        /individuals/activities/child-benefit/NINO/:nino               uk.gov.hmrc.singlecustomeraccountstub.controllers.ActivitiesController.getChildBenefitData(nino: String, fields: Option[String] = None)
 GET        /individuals/activities/paye-income/NINO/:nino                 uk.gov.hmrc.singlecustomeraccountstub.controllers.ActivitiesController.getPayeIncomeData(nino: String, fields: Option[String] = None)
 GET        /individuals/actions/tax-calc/NINO/:nino                       uk.gov.hmrc.singlecustomeraccountstub.controllers.ActionsController.getActionData(nino: String, fields: Option[String] = None)

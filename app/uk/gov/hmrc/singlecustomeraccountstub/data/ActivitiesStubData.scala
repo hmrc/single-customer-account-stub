@@ -32,14 +32,14 @@ object ActivitiesStubData {
       activityHeading = "Your tax calculation")
   )
 
-  val taxCodeChange = Seq(
-    CapabilityDetails(
-      nino = Nino(true, Some("GG012345C")),
-      date = LocalDate.now.minusMonths(1).minusDays(1),
-      descriptionContent = "Your tax code for Monk's Cafe has changed",
-      url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison",
-      activityHeading = "Latest Tax code change")
-  )
+//  val taxCodeChange = Seq(
+//    CapabilityDetails(
+//      nino = Nino(true, Some("GG012345C")),
+//      date = LocalDate.now.minusMonths(1).minusDays(1),
+//      descriptionContent = "Your tax code for Monk's Cafe has changed",
+//      url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison",
+//      activityHeading = "Latest Tax code change")
+//  )
 
   val childBenefit = Seq(
     CapabilityDetails(
@@ -84,7 +84,7 @@ object ActivitiesStubData {
   )
 
 
-  val taxCodeChangeApi = Seq(
+  val taxCodeChange =
     TaxCodeChangeObject(
       data = TaxCodeChangeData(
         current = TaxCodeChangeDetails(
@@ -96,7 +96,7 @@ object ActivitiesStubData {
       ),
       links = Array.empty[String]
     )
-  )
+
 
   val taxCalcReconciliation =
     """
