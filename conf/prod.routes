@@ -1,8 +1,6 @@
 # Add all the application routes to the app.routes file
 ->         /                                                              health.Routes
 
-GET        /admin/metrics                                                 com.kenshoo.play.metrics.MetricsController.metrics
-
 GET        /individuals/details/NINO/:nino                                uk.gov.hmrc.singlecustomeraccountstub.controllers.DesignatoryDetailsController.getDesignatoryDetails(nino: String, fields: Option[String] = None)
 GET        /individuals/details/contact/nino/:nino                        uk.gov.hmrc.singlecustomeraccountstub.controllers.ContactDetailsController.getContactDetails(nino: String, fields: Option[String] = None)
 GET        /individuals/activities/tax-calc/NINO/:nino                    uk.gov.hmrc.singlecustomeraccountstub.controllers.ActivitiesController.getTaxCalcData(nino: String, fields: Option[String] = None)
