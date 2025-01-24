@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2025 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,14 +16,14 @@
 
 package uk.gov.hmrc.singlecustomeraccountstub.models
 
-import play.api.libs.json.{JsValue, Json}
+import play.api.libs.json.{JsValue, Json, OFormat}
 import play.api.mvc.Results.NotFound
 
 case class Failure(code: String, reason: String)
 
 object Failure {
 
-  implicit val format = Json.format[Failure]
+  implicit val format: OFormat[Failure] = Json.format[Failure]
 
 }
 
@@ -31,7 +31,7 @@ case class ErrorResponse(failures: Seq[Failure])
 
 object ErrorResponse {
 
-  implicit val format = Json.format[ErrorResponse]
+  implicit val format: OFormat[ErrorResponse] = Json.format[ErrorResponse]
 
 }
 
