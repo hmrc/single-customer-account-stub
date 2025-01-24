@@ -1,13 +1,16 @@
-import sbt._
+import sbt.*
 
 object AppDependencies {
 
-  val compile = Seq(
-    "uk.gov.hmrc"             %% "bootstrap-backend-play-30"    % "8.1.0",
-    "uk.gov.hmrc"             %% s"play-partials-play-30"           % "9.1.0"
+  val playVersion = "play-30"
+  val bootstrapPlayVersion = "9.7.0"
+
+  val compile: Seq[ModuleID] = Seq(
+    "uk.gov.hmrc"             %% s"bootstrap-backend-$playVersion"    % bootstrapPlayVersion,
+    "uk.gov.hmrc"             %% s"play-partials-$playVersion"        % "10.0.0"
   )
 
-  val test = Seq(
-    "uk.gov.hmrc"             %% "bootstrap-test-play-30"     % "8.1.0"             % Test
+  val test: Seq[ModuleID] = Seq(
+    "uk.gov.hmrc"             %% s"bootstrap-test-$playVersion"       % bootstrapPlayVersion      % Test
   )
 }
