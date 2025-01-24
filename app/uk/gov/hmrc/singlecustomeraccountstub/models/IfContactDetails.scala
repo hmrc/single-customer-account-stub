@@ -36,11 +36,11 @@ object IfContactDetail {
       (JsPath \ "code").read[Int] and
         (JsPath \ "type").read[String] and
         (JsPath \ "detail").read[String]
-      )(IfContactDetail.apply _),
+    )(IfContactDetail.apply _),
     (
       (JsPath \ "code").write[Int] and
         (JsPath \ "type").write[String] and
         (JsPath \ "detail").write[String]
-      )(unlift(IfContactDetail.unapply))
+    )(unlift(IfContactDetail.unapply))
   )
 }

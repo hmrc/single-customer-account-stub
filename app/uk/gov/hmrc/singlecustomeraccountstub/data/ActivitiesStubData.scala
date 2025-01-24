@@ -29,7 +29,8 @@ object ActivitiesStubData {
       date = LocalDate.now.minusMonths(2).minusDays(1),
       descriptionContent = "Your tax calculation for the 2022-2023 is now available",
       url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison",
-      activityHeading = "Your tax calculation")
+      activityHeading = "Your tax calculation"
+    )
   )
 
   val childBenefit: Seq[CapabilityDetails] = Seq(
@@ -38,31 +39,36 @@ object ActivitiesStubData {
       date = LocalDate.now.minusMonths(1).minusDays(1),
       descriptionContent = "HMRC paid you child benefit",
       url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison",
-      activityHeading = "Recent Child Benefit payments"),
+      activityHeading = "Recent Child Benefit payments"
+    ),
     CapabilityDetails(
       nino = Nino(true, Some("GG012345C")),
       date = LocalDate.now.minusMonths(2),
       descriptionContent = "HMRC paid you child benefit",
       url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison",
-      activityHeading = "Recent Child Benefit payments"),
+      activityHeading = "Recent Child Benefit payments"
+    ),
     CapabilityDetails(
       nino = Nino(true, Some("GG012345C")),
       date = LocalDate.now.minusMonths(3).plusDays(1),
       descriptionContent = "HMRC paid you child benefit",
       url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison",
-      activityHeading = "Recent Child Benefit payments"),
+      activityHeading = "Recent Child Benefit payments"
+    ),
     CapabilityDetails(
       nino = Nino(true, Some("GG012345C")),
       date = LocalDate.now.withMonth(4).withDayOfMonth(5),
       descriptionContent = "HMRC paid you child benefit",
       url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison",
-      activityHeading = "Recent Child Benefit payments"),
+      activityHeading = "Recent Child Benefit payments"
+    ),
     CapabilityDetails(
       nino = Nino(true, Some("GG012345C")),
       date = LocalDate.now.withMonth(4).withDayOfMonth(6),
       descriptionContent = "HMRC paid you child benefit",
       url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison",
-      activityHeading = "Recent Child Benefit payments")
+      activityHeading = "Recent Child Benefit payments"
+    )
   )
 
   val payeIncome: Seq[CapabilityDetails] = Seq(
@@ -71,23 +77,38 @@ object ActivitiesStubData {
       date = LocalDate.now.minusMonths(2).minusDays(1),
       descriptionContent = "Central Perk Coffee Ltd paid you PAYE income",
       url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison",
-      activityHeading = "Your PAYE income for the current tax year")
+      activityHeading = "Your PAYE income for the current tax year"
+    )
   )
-
 
   val taxCodeChange: TaxCodeChangeObject =
     TaxCodeChangeObject(
       data = TaxCodeChangeData(
         current = TaxCodeChangeDetails(
-          taxCode = "830L", employerName = "Monk's Cafe", operatedTaxCode = true, p2Issued = true, startDate = LocalDate.of(2023, 3, 8).toString, endDate = LocalDate.of(2023, 4, 8).toString, payrollNumber = "1", pensionIndicator = true, primary = true
+          taxCode = "830L",
+          employerName = "Monk's Cafe",
+          operatedTaxCode = true,
+          p2Issued = true,
+          startDate = LocalDate.of(2023, 3, 8).toString,
+          endDate = LocalDate.of(2023, 4, 8).toString,
+          payrollNumber = "1",
+          pensionIndicator = true,
+          primary = true
         ),
         previous = TaxCodeChangeDetails(
-          taxCode = "1150L", employerName = "Employer Name", operatedTaxCode = true, p2Issued = true, startDate = LocalDate.of(2023, 3, 8).toString, endDate = LocalDate.of(2023, 4, 8).toString, payrollNumber = "1", pensionIndicator = true, primary = true
+          taxCode = "1150L",
+          employerName = "Employer Name",
+          operatedTaxCode = true,
+          p2Issued = true,
+          startDate = LocalDate.of(2023, 3, 8).toString,
+          endDate = LocalDate.of(2023, 4, 8).toString,
+          payrollNumber = "1",
+          pensionIndicator = true,
+          primary = true
         )
       ),
       links = Array.empty[String]
     )
-
 
   val taxCalcReconciliation: String =
     """

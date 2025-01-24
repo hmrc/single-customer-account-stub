@@ -26,55 +26,59 @@ import javax.inject.{Inject, Singleton}
 import scala.concurrent.Future
 
 @Singleton()
-class ActivitiesController @Inject()(cc: ControllerComponents)
-  extends BackendController(cc) {
+class ActivitiesController @Inject() (cc: ControllerComponents) extends BackendController(cc) {
 
-  def getTaxCalcData(nino: String, fields: Option[String] = None): Action[AnyContent] = Action.async { implicit request =>
-    nino match {
-      case "GG012345C" => Future.successful(Ok(Json.toJson(ActivitiesStubData.taxCalc)))
-      case _ => Future.successful(ErrorResponses.notFound)
-    }
+  def getTaxCalcData(nino: String, fields: Option[String] = None): Action[AnyContent] = Action.async {
+    implicit request =>
+      nino match {
+        case "GG012345C" => Future.successful(Ok(Json.toJson(ActivitiesStubData.taxCalc)))
+        case _           => Future.successful(ErrorResponses.notFound)
+      }
   }
 
-  def getTaxCodeChangeData(nino: String, fields: Option[String] = None): Action[AnyContent] = Action.async { implicit request =>
-    nino match {
-      case "GG012345C" => Future.successful(Ok(Json.toJson(ActivitiesStubData.taxCodeChange)))
-      case _ => Future.successful(ErrorResponses.notFound)
-    }
+  def getTaxCodeChangeData(nino: String, fields: Option[String] = None): Action[AnyContent] = Action.async {
+    implicit request =>
+      nino match {
+        case "GG012345C" => Future.successful(Ok(Json.toJson(ActivitiesStubData.taxCodeChange)))
+        case _           => Future.successful(ErrorResponses.notFound)
+      }
   }
 
-  def getChildBenefitData(nino: String, fields: Option[String] = None): Action[AnyContent] = Action.async { implicit request =>
-    nino match {
-      case "GG012345C" => Future.successful(Ok(Json.toJson(ActivitiesStubData.childBenefit)))
-      case _ => Future.successful(ErrorResponses.notFound)
-    }
+  def getChildBenefitData(nino: String, fields: Option[String] = None): Action[AnyContent] = Action.async {
+    implicit request =>
+      nino match {
+        case "GG012345C" => Future.successful(Ok(Json.toJson(ActivitiesStubData.childBenefit)))
+        case _           => Future.successful(ErrorResponses.notFound)
+      }
   }
 
-  def getPayeIncomeData(nino: String, fields: Option[String] = None): Action[AnyContent] = Action.async { implicit request =>
-    nino match {
-      case "GG012345C" => Future.successful(Ok(Json.toJson(ActivitiesStubData.payeIncome)))
-      case _ => Future.successful(ErrorResponses.notFound)
-    }
+  def getPayeIncomeData(nino: String, fields: Option[String] = None): Action[AnyContent] = Action.async {
+    implicit request =>
+      nino match {
+        case "GG012345C" => Future.successful(Ok(Json.toJson(ActivitiesStubData.payeIncome)))
+        case _           => Future.successful(ErrorResponses.notFound)
+      }
   }
 
   def getUnderpaymentStatus(nino: String, taxYear: String): Action[AnyContent] = Action { implicit request =>
     nino match {
       case "GG012345C" => if (taxYear == "2021-22") Ok else BadRequest
-      case _ => ErrorResponses.notFound
+      case _           => ErrorResponses.notFound
     }
   }
 
   def getRepaymentStatus(nino: String): Action[AnyContent] = Action { implicit request =>
     nino match {
       case "GG012345C" => Ok
-      case _ => ErrorResponses.notFound
+      case _           => ErrorResponses.notFound
     }
   }
 
-  def getTaxCalcReconciliation(nino: String, startTaxYear: String, endTaxYear: String): Action[AnyContent] = Action { implicit request =>
-    nino match {
-      case "GG012345C" => Ok(Json.toJson(ActivitiesStubData.taxCalcReconciliation))
-      case _ => ErrorResponses.notFound
-    }
+  def getTaxCalcReconciliation(nino: String, startTaxYear: String, endTaxYear: String): Action[AnyContent] = Action {
+    implicit request =>
+      nino match {
+        case "GG012345C" => Ok(Json.toJson(ActivitiesStubData.taxCalcReconciliation))
+        case _           => ErrorResponses.notFound
+      }
   }
 }

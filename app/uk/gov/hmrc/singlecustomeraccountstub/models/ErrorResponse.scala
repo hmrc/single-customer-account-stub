@@ -35,11 +35,16 @@ object ErrorResponse {
 
 }
 
-
 object ErrorResponses {
 
-  private def createResponse(code: String, reason: String): JsValue = Json.toJson(ErrorResponse(Seq(Failure(code, reason))))
+  private def createResponse(code: String, reason: String): JsValue =
+    Json.toJson(ErrorResponse(Seq(Failure(code, reason))))
 
-  val notFound = NotFound(createResponse("IDENTIFIER_NOT_FOUND", "The remote endpoint has indicated that identifier supplied can not be found."))
+  val notFound = NotFound(
+    createResponse(
+      "IDENTIFIER_NOT_FOUND",
+      "The remote endpoint has indicated that identifier supplied can not be found."
+    )
+  )
 
 }

@@ -27,13 +27,13 @@ import uk.gov.hmrc.singlecustomeraccountstub.data.BasicStubDataObjs
 class ContactDetailsControllerSpec extends AnyWordSpec with Matchers {
 
   private val fakeRequest = FakeRequest("GET", "/")
-  private val controller = new ContactDetailsController(Helpers.stubControllerComponents())
-  private val validNino = "AA999999A"
+  private val controller  = new ContactDetailsController(Helpers.stubControllerComponents())
+  private val validNino   = "AA999999A"
 
   "GET /individuals/details/contact/nino/:nino" should {
     "return 200 if stub for NiNo is found" in {
       val result = controller.getContactDetails(validNino)(fakeRequest)
-      status(result) shouldBe Status.OK
+      status(result)        shouldBe Status.OK
       contentAsJson(result) shouldBe Json.toJson(BasicStubDataObjs.contactDetails)
     }
 

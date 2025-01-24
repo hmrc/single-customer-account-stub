@@ -24,24 +24,23 @@ import play.api.test.Helpers._
 import play.api.test.{FakeRequest, Helpers}
 import uk.gov.hmrc.singlecustomeraccountstub.data.ActionStubData
 
-
 class ActionControllerSpec extends AnyWordSpec with Matchers {
 
-  private val fakeRequest = FakeRequest("GET", "/")
-  private val controller = new ActionsController(Helpers.stubControllerComponents())
-  private val overPaymentNino = "GG012345C"
+  private val fakeRequest      = FakeRequest("GET", "/")
+  private val controller       = new ActionsController(Helpers.stubControllerComponents())
+  private val overPaymentNino  = "GG012345C"
   private val underPaymentNino = "AA999999A"
 
   "GET /individuals/actions/tax-calc/NINO/:nino" should {
     "return 200 if stub for over payment taxCalc is found" in {
       val result = controller.getActionData(overPaymentNino)(fakeRequest)
-      status(result) shouldBe Status.OK
+      status(result)        shouldBe Status.OK
       contentAsJson(result) shouldBe Json.toJson(ActionStubData.overPayment)
     }
 
     "return 200 if stub for under payment taxCalc is found" in {
       val result = controller.getActionData(underPaymentNino)(fakeRequest)
-      status(result) shouldBe Status.OK
+      status(result)        shouldBe Status.OK
       contentAsJson(result) shouldBe Json.toJson(ActionStubData.underPayment)
     }
 

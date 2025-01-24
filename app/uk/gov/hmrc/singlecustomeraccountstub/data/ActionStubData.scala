@@ -30,17 +30,20 @@ object ActionStubData {
       descriptionContent = "You paid too much tax in the 2022 to 2023 tax year. HMRC owes you a £84.23 refund.",
       actionDescription = "Claim your tax refund",
       url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison",
-      activityHeading = "Things for you to do")
+      activityHeading = "Things for you to do"
+    )
   )
 
   val underPayment = Seq(
     ActionDetails(
       nino = Nino(true, Some("AA999999A")),
       date = LocalDate.now.minusMonths(3).minusDays(5),
-      descriptionContent = "You did not pay enough tax in the 2022 to 2023 tax year. You must pay HMRC by 31 January 2023.",
+      descriptionContent =
+        "You did not pay enough tax in the 2022 to 2023 tax year. You must pay HMRC by 31 January 2023.",
       actionDescription = "Make a tax payment",
       url = "www.tax.service.gov.uk/check-income-tax/tax-code-change/tax-code-comparison",
-      activityHeading = "Things for you to do")
+      activityHeading = "Things for you to do"
+    )
   )
 
 }
