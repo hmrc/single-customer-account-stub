@@ -114,7 +114,7 @@ object BasicStubDataObjs {
     nameList = IfNameList(Seq(nameGordon)),
     addressList = IfAddressList(Seq(residential, correspondence))
   )
-  val stephenSADetail = IfDesignatoryDetails(
+  val stephenSADetail                 = IfDesignatoryDetails(
     details = IfDetails(marriageStatusType = Some(1)),
     nameList = IfNameList(Seq(nameStephen)),
     addressList = IfAddressList(Seq())

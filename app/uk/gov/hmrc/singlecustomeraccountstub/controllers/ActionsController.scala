@@ -25,14 +25,14 @@ import uk.gov.hmrc.singlecustomeraccountstub.models.ErrorResponses
 import javax.inject.Inject
 import scala.concurrent.Future
 
-class ActionsController @Inject()(cc: ControllerComponents) extends BackendController(cc) {
+class ActionsController @Inject() (cc: ControllerComponents) extends BackendController(cc) {
 
   def getActionData(nino: String, fields: Option[String] = None): Action[AnyContent] = Action.async {
     implicit request =>
       nino match {
         case "GG012345C" => Future.successful(Ok(Json.toJson(ActionStubData.overPayment)))
         case "AA999999A" => Future.successful(Ok(Json.toJson(ActionStubData.underPayment)))
-        case _ => Future.successful(ErrorResponses.notFound)
+        case _           => Future.successful(ErrorResponses.notFound)
       }
   }
 
