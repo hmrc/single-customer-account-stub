@@ -31,20 +31,20 @@ case class IfContactDetail(code: Int, contactType: String, detail: String)
 
 object IfContactDetail {
 
-    def unapply(ifContact: IfContactDetail): Option[(Int, String, String)] =
-      Some((ifContact.code, ifContact.contactType, ifContact.detail))
+  def unapply(ifContact: IfContactDetail): Option[(Int, String, String)] =
+    Some((ifContact.code, ifContact.contactType, ifContact.detail))
 
-    implicit val reads: Reads[IfContactDetail] = (
-      (JsPath \ "code").read[Int] and
-        (JsPath \ "type").read[String] and
-        (JsPath \ "detail").read[String]
-      )(IfContactDetail.apply _)
+  implicit val reads: Reads[IfContactDetail] = (
+    (JsPath \ "code").read[Int] and
+      (JsPath \ "type").read[String] and
+      (JsPath \ "detail").read[String]
+    )(IfContactDetail.apply _)
 
-    implicit val writes: Writes[IfContactDetail] = (
-      (JsPath \ "code").write[Int] and
-        (JsPath \ "type").write[String] and
-        (JsPath \ "detail").write[String]
-      )(unlift(IfContactDetail.unapply))
+  implicit val writes: Writes[IfContactDetail] = (
+    (JsPath \ "code").write[Int] and
+      (JsPath \ "type").write[String] and
+      (JsPath \ "detail").write[String]
+    )(unlift(IfContactDetail.unapply))
 
-    implicit val format: Format[IfContactDetail] = Format(reads, writes)
+  implicit val format: Format[IfContactDetail] = Format(reads, writes)
 }

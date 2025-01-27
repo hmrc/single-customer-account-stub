@@ -26,7 +26,7 @@ import javax.inject.{Inject, Singleton}
 import scala.concurrent.Future
 
 @Singleton()
-class ContactDetailsController @Inject() (cc: ControllerComponents) extends BackendController(cc) {
+class ContactDetailsController @Inject()(cc: ControllerComponents) extends BackendController(cc) {
 
   def getContactDetails(nino: String, fields: Option[String] = None): Action[AnyContent] = Action.async { _ =>
     nino match {
@@ -36,7 +36,7 @@ class ContactDetailsController @Inject() (cc: ControllerComponents) extends Back
       case "AA999999D" => Future.successful(Ok(Json.toJson(BasicStubDataObjs.contactDetails)))
       case "HT009413A" => Future.successful(Ok(Json.toJson(BasicStubDataObjs.contactDetails)))
       case "ER872414B" => Future.successful(Ok(Json.toJson(BasicStubDataObjs.contactDetails)))
-      case _           => Future.successful(ErrorResponses.notFound)
+      case _ => Future.successful(ErrorResponses.notFound)
     }
   }
 }
