@@ -26,13 +26,13 @@ import uk.gov.hmrc.singlecustomeraccountstub.data.ActivitiesStubData
 
 class ActivitiesControllerSpec extends AnyWordSpec with Matchers {
   private val fakeRequest = FakeRequest("GET", "/")
-  private val controller = new ActivitiesController(Helpers.stubControllerComponents())
-  private val validNino = "GG012345C"
+  private val controller  = new ActivitiesController(Helpers.stubControllerComponents())
+  private val validNino   = "GG012345C"
 
   "GET /individuals/activities/tax-calc/NINO/:nino" should {
     "return 200 if stub for taxCalc is found" in {
       val result = controller.getTaxCalcData(validNino)(fakeRequest)
-      status(result) shouldBe Status.OK
+      status(result)        shouldBe Status.OK
       contentAsJson(result) shouldBe Json.toJson(ActivitiesStubData.taxCalc)
     }
 
@@ -45,7 +45,7 @@ class ActivitiesControllerSpec extends AnyWordSpec with Matchers {
   "GET /individuals/activities/tax-code-change/NINO/:nino" should {
     "return 200 if stub for tax code change is found" in {
       val result = controller.getTaxCodeChangeData(validNino)(fakeRequest)
-      status(result) shouldBe Status.OK
+      status(result)        shouldBe Status.OK
       contentAsJson(result) shouldBe Json.toJson(ActivitiesStubData.taxCodeChange)
     }
 
@@ -58,7 +58,7 @@ class ActivitiesControllerSpec extends AnyWordSpec with Matchers {
   "GET /individuals/activities/child-benefit/NINO/:nino " should {
     "return 200 if stub for child benefit is found" in {
       val result = controller.getChildBenefitData(validNino)(fakeRequest)
-      status(result) shouldBe Status.OK
+      status(result)        shouldBe Status.OK
       contentAsJson(result) shouldBe Json.toJson(ActivitiesStubData.childBenefit)
     }
 
@@ -71,7 +71,7 @@ class ActivitiesControllerSpec extends AnyWordSpec with Matchers {
   "GET /individuals/activities/paye-income/NINO/:nino" should {
     "return 200 if stub for paye income is found" in {
       val result = controller.getPayeIncomeData(validNino)(fakeRequest)
-      status(result) shouldBe Status.OK
+      status(result)        shouldBe Status.OK
       contentAsJson(result) shouldBe Json.toJson(ActivitiesStubData.payeIncome)
     }
 
@@ -97,7 +97,7 @@ class ActivitiesControllerSpec extends AnyWordSpec with Matchers {
     }
   }
 
-  "GET /pay-as-you-earn/individuals/:nino/repayments/status" should {
+  "GET /pay-as-you-earn/individuals/:nino/repayments/status"        should {
     "return 200 if repayment status is found" in {
       val result = controller.getRepaymentStatus(validNino)(fakeRequest)
       status(result) shouldBe Status.OK
@@ -111,7 +111,7 @@ class ActivitiesControllerSpec extends AnyWordSpec with Matchers {
   "GET /individuals/:nino/reconciliation/:startTaxYear/:endTaxYear" should {
     "return 200 if tax calc reconciliation is found" in {
       val result = controller.getTaxCalcReconciliation(validNino, "2021", "2022")(fakeRequest)
-      status(result) shouldBe Status.OK
+      status(result)        shouldBe Status.OK
       contentAsJson(result) shouldBe Json.toJson(ActivitiesStubData.taxCalcReconciliation)
     }
 

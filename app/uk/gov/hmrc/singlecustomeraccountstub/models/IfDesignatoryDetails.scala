@@ -21,9 +21,7 @@ import uk.gov.hmrc.auth.core.Nino
 
 import java.time.LocalDate
 
-case class IfDesignatoryDetails(details: IfDetails,
-                                nameList: IfNameList,
-                                addressList: IfAddressList)
+case class IfDesignatoryDetails(details: IfDetails, nameList: IfNameList, addressList: IfAddressList)
 
 object IfDesignatoryDetails {
 
@@ -32,12 +30,12 @@ object IfDesignatoryDetails {
 }
 
 case class CapabilityDetails(
-                              nino: Nino,
-                              date: LocalDate,
-                              descriptionContent: String,
-                              url: String,
-                              activityHeading: String
-                            )
+  nino: Nino,
+  date: LocalDate,
+  descriptionContent: String,
+  url: String,
+  activityHeading: String
+)
 
 object CapabilityDetails {
 
@@ -46,13 +44,13 @@ object CapabilityDetails {
 }
 
 case class ActionDetails(
-                          nino: Nino,
-                          date: LocalDate,
-                          descriptionContent: String,
-                          actionDescription: String,
-                          url: String,
-                          activityHeading: String
-                        )
+  nino: Nino,
+  date: LocalDate,
+  descriptionContent: String,
+  actionDescription: String,
+  url: String,
+  activityHeading: String
+)
 
 object ActionDetails {
 
@@ -61,16 +59,16 @@ object ActionDetails {
 }
 
 case class TaxCodeChangeDetails(
-                            taxCode: String,
-                            employerName: String,
-                            operatedTaxCode: Boolean,
-                            p2Issued: Boolean,
-                            startDate: String,
-                            endDate: String,
-                            payrollNumber: String,
-                            pensionIndicator: Boolean,
-                            primary: Boolean
-                               )
+  taxCode: String,
+  employerName: String,
+  operatedTaxCode: Boolean,
+  p2Issued: Boolean,
+  startDate: String,
+  endDate: String,
+  payrollNumber: String,
+  pensionIndicator: Boolean,
+  primary: Boolean
+)
 
 object TaxCodeChangeDetails {
 
@@ -78,10 +76,10 @@ object TaxCodeChangeDetails {
 
 }
 
-case class TaxCodeChangeData (
-                             current: TaxCodeChangeDetails,
-                             previous: TaxCodeChangeDetails
-                             )
+case class TaxCodeChangeData(
+  current: TaxCodeChangeDetails,
+  previous: TaxCodeChangeDetails
+)
 
 object TaxCodeChangeData {
 
@@ -89,10 +87,10 @@ object TaxCodeChangeData {
 
 }
 
-case class TaxCodeChangeObject (
-                               data: TaxCodeChangeData,
-                               links: Array[String]
-                               )
+case class TaxCodeChangeObject(
+  data: TaxCodeChangeData,
+  links: Array[String]
+)
 
 object TaxCodeChangeObject {
 
@@ -116,15 +114,17 @@ object IfNameList {
 
 }
 
-case class IfName(nameSequenceNumber: Option[Int] = None,
-                  nameType: Option[Int] = None,
-                  titleType: Option[Int] = None,
-                  requestedName: Option[String] = None,
-                  nameStartDate: Option[LocalDate] = None,
-                  nameEndDate: Option[LocalDate] = None,
-                  firstForename: Option[String] = None,
-                  secondForename: Option[String] = None,
-                  surname: Option[String] = None)
+case class IfName(
+  nameSequenceNumber: Option[Int] = None,
+  nameType: Option[Int] = None,
+  titleType: Option[Int] = None,
+  requestedName: Option[String] = None,
+  nameStartDate: Option[LocalDate] = None,
+  nameEndDate: Option[LocalDate] = None,
+  firstForename: Option[String] = None,
+  secondForename: Option[String] = None,
+  surname: Option[String] = None
+)
 
 object IfName {
 
@@ -140,17 +140,19 @@ object IfAddressList {
 
 }
 
-case class IfAddress(addressSequenceNumber: Option[Int] = None,
-                     countryCode: Option[Int] = None,
-                     addressType: Option[Int] = None,
-                     addressStartDate: Option[LocalDate] = None,
-                     addressEndDate: Option[LocalDate] = None,
-                     addressLine1: Option[String] = None,
-                     addressLine2: Option[String] = None,
-                     addressLine3: Option[String] = None,
-                     addressLine4: Option[String] = None,
-                     addressLine5: Option[String] = None,
-                     addressPostcode: Option[String] = None)
+case class IfAddress(
+  addressSequenceNumber: Option[Int] = None,
+  countryCode: Option[Int] = None,
+  addressType: Option[Int] = None,
+  addressStartDate: Option[LocalDate] = None,
+  addressEndDate: Option[LocalDate] = None,
+  addressLine1: Option[String] = None,
+  addressLine2: Option[String] = None,
+  addressLine3: Option[String] = None,
+  addressLine4: Option[String] = None,
+  addressLine5: Option[String] = None,
+  addressPostcode: Option[String] = None
+)
 
 object IfAddress {
 

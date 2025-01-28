@@ -77,7 +77,6 @@ object BasicStubDataObjs {
     secondForename = Some("X"),
     surname = Some("BOTH"),
     requestedName = Some("Stephen")
-
   )
 
   val nameEdward = IfName(
@@ -87,7 +86,6 @@ object BasicStubDataObjs {
     secondForename = Some("A"),
     surname = Some("Robertson"),
     requestedName = None
-
   )
 
   val nameAndrew = IfName(
@@ -102,38 +100,46 @@ object BasicStubDataObjs {
   val johnResidential = IfDesignatoryDetails(
     details = IfDetails(marriageStatusType = Some(4)),
     nameList = IfNameList(Seq(nameJohn)),
-    addressList = IfAddressList(Seq(residential)))
+    addressList = IfAddressList(Seq(residential))
+  )
 
   val joanNoFixedAbode = IfDesignatoryDetails(
     details = IfDetails(marriageStatusType = Some(10)),
     nameList = IfNameList(Seq(nameJoan)),
-    addressList = IfAddressList(Seq()))
+    addressList = IfAddressList(Seq())
+  )
 
   val gordonResidentialCorrespondence = IfDesignatoryDetails(
     details = IfDetails(marriageStatusType = Some(1)),
     nameList = IfNameList(Seq(nameGordon)),
-    addressList = IfAddressList(Seq(residential, correspondence)))
-  val stephenSADetail = IfDesignatoryDetails(
+    addressList = IfAddressList(Seq(residential, correspondence))
+  )
+  val stephenSADetail                 = IfDesignatoryDetails(
     details = IfDetails(marriageStatusType = Some(1)),
     nameList = IfNameList(Seq(nameStephen)),
-    addressList = IfAddressList(Seq()))
+    addressList = IfAddressList(Seq())
+  )
 
   val edwardResidentialDetail = IfDesignatoryDetails(
     details = IfDetails(marriageStatusType = Some(1)),
     nameList = IfNameList(Seq(nameEdward)),
-    addressList = IfAddressList(Seq()))
-
+    addressList = IfAddressList(Seq())
+  )
 
   val andrewResidentialDetail = IfDesignatoryDetails(
     details = IfDetails(marriageStatusType = Some(1)),
     nameList = IfNameList(Seq(nameAndrew)),
-    addressList = IfAddressList(Seq()))
+    addressList = IfAddressList(Seq())
+  )
 
   val contactDetails = IfContactDetails(
-    contactDetails = Some(Seq(
-      IfContactDetail(code = 9, contactType = "MOBILE TELEPHONE", detail = "07123 987654"),
-      IfContactDetail(code = 7, contactType = "DAYTIME TELEPHONE", detail = "07123 987654"),
-      IfContactDetail(code = 8, contactType = "EVENING TELEPHONE", detail = "07123 987654"),
-      IfContactDetail(code = 11, contactType = "PRIMARY E-MAIL", detail = "fred.blogs@hotmail.com")
-    )))
+    contactDetails = Some(
+      Seq(
+        IfContactDetail(code = 9, contactType = "MOBILE TELEPHONE", detail = "07123 987654"),
+        IfContactDetail(code = 7, contactType = "DAYTIME TELEPHONE", detail = "07123 987654"),
+        IfContactDetail(code = 8, contactType = "EVENING TELEPHONE", detail = "07123 987654"),
+        IfContactDetail(code = 11, contactType = "PRIMARY E-MAIL", detail = "fred.blogs@hotmail.com")
+      )
+    )
+  )
 }

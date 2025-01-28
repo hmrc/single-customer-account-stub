@@ -1,5 +1,5 @@
 /*
- * Copyright 2023 HM Revenue & Customs
+ * Copyright 2025 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@
 package uk.gov.hmrc.singlecustomeraccountstub.models
 
 import play.api.libs.functional.syntax.{toFunctionalBuilderOps, unlift}
-import play.api.libs.json.{Format, JsPath, Json}
+import play.api.libs.json.{Format, JsPath, Json, Reads, Writes}
 
 case class IfContactDetails(contactDetails: Option[Seq[IfContactDetail]])
 
@@ -31,16 +31,20 @@ case class IfContactDetail(code: Int, contactType: String, detail: String)
 
 object IfContactDetail {
 
-  implicit val format: Format[IfContactDetail] = Format(
-    (
-      (JsPath \ "code").read[Int] and
-        (JsPath \ "type").read[String] and
-        (JsPath \ "detail").read[String]
-      )(IfContactDetail.apply _),
-    (
-      (JsPath \ "code").write[Int] and
-        (JsPath \ "type").write[String] and
-        (JsPath \ "detail").write[String]
-      )(unlift(IfContactDetail.unapply))
-  )
+  def unapply(ifContact: IfContactDetail): Option[(Int, String, String)] =
+    Some((ifContact.code, ifContact.contactType, ifContact.detail))
+
+  implicit val reads: Reads[IfContactDetail] = (
+    (JsPath \ "code").read[Int] and
+      (JsPath \ "type").read[String] and
+      (JsPath \ "detail").read[String]
+  )(IfContactDetail.apply _)
+
+  implicit val writes: Writes[IfContactDetail] = (
+    (JsPath \ "code").write[Int] and
+      (JsPath \ "type").write[String] and
+      (JsPath \ "detail").write[String]
+  )(unlift(IfContactDetail.unapply))
+
+  implicit val format: Format[IfContactDetail] = Format(reads, writes)
 }
