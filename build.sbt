@@ -11,7 +11,6 @@ lazy val microservice = Project(appName, file("."))
     libraryDependencies ++= AppDependencies.compile ++ AppDependencies.test,
     PlayKeys.playDefaultPort := 8421,
     retrieveManaged := true,
-    resolvers ++= Seq(Resolver.jcenterRepo),
     scalacOptions ++= Seq(
       "-feature",
       "-Werror",
